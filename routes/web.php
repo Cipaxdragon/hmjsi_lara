@@ -32,9 +32,33 @@ Route::get('/berita', function () {
     ]);
 });
 
-Route::get('postingan/{slug}', function() {
+Route::get('postingan/{slug}', function($slug) {
+    $berita = [
+        [
+            'nama_berita' => 'HMJ Dibekukan',
+            'tanggal' => 30,
+            'slug' => "hmj-dibekukan",
+            'isi' => 'Mampus aowkowak',
+        ],
+        [
+            'nama_berita' => 'HMJ Kembali',
+            'tanggal' => 30,
+            'slug' => "hmj-kembali",
+            'isi' => 'Yoi Mara mara bu parida',
+        ]
+        
+   
+        ];
+    $newpost = [];
+    foreach($berita as $post){
+        if($post['slug'] === $slug){
+            $newpost = $post;
+        }
+    }
+
     return view('user/postingan',[
-        "title" => "single post"
+        "title" => "single post",
+        "post" => $newpost
     ]);
 });
 
