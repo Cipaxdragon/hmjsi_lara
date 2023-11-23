@@ -4,8 +4,6 @@ use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
 
-
-
 Route::get('/', function () {
     return view('user/beranda',[
         "title" => "beranda"
@@ -13,7 +11,8 @@ Route::get('/', function () {
 });
 
 Route::get('/berita', [PostController::class,'index']);
-Route::get('/postingan/{id}', [PostController::class,'singlepost']);
+// Route::get('/postingan/{id}', [PostController::class,'singlepost']);
+Route::get('/postingan/{post:slug}', [PostController::class,'singlepost']);
 
 Route::get('/pengurus', function () {
     return view('user/pengurus',[

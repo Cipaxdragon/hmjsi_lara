@@ -5,7 +5,7 @@
     <div class="card-body">
       <h5 class="card-title">{{ $post->title}}</h5>
       <p class="card-text">{{ $post->excerpt }}</p>
-      <a href="/postingan/{{ $post->id}}" class="btn btn-primary">Go somewhere</a>
+      <a href="/postingan/{{ $post->slug}}" class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
    @endforeach

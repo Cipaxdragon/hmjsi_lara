@@ -14,10 +14,11 @@ class PostController extends Controller
             "post" => Post::all()
         ]);
     }
-    public function singlepost($id){
+    public function singlepost(Post $post){
         return view('user/postingan',[
-            "title" => 'tes',
-            "post" =>Post::find($id)
+            "title" => $post->title,
+            "post" => $post,
         ]);
+
     }
 }
