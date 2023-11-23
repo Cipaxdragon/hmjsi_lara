@@ -3,13 +3,11 @@
     background-color: white;
     width: 7px;
  }
-
  ::-webkit-scrollbar-thumb {
-    background: #EBEBEB;
-    border-radius: 10px;
+    background: rgb(196, 196, 196);
+    border-radius: 50px;
  }
-
  ::-webkit-scrollbar-thumb:hover {
-    background: #D6D6D6;
+    background: #1245ba;
  }
 /*

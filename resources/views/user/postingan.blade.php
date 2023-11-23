@@ -4,13 +4,13 @@
     <div class="col-md-8 offset-md-2">
       <article>
         <header>
-          <h1 class="mt-4">{{ $post['nama_berita'] }}</h1>
+          <h1 class="mt-4">{{ $post->title }}</h1>
           <p class="lead">Penulis - Tanggal</p>
         </header>
         <hr>
         <img src="https://via.placeholder.com/800x400" class="img-fluid" alt="Gambar Postingan">
         <hr>
-        <p>{{ $post['isi'] }}</p>
+        <p class="justfy-text">{!! $post->body !!}</p>
         <hr>
         <div class="mb-4">
           <a href="#" class="btn btn-primary">Kategori</a>
