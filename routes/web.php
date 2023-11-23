@@ -57,7 +57,7 @@ Route::get('postingan/{slug}', function($slug) {
     }
 
     return view('user/postingan',[
-        "title" => "single post",
+        "title" => $newpost['nama_berita'],
         "post" => $newpost
     ]);
 });
@@ -72,6 +72,12 @@ Route::get('/pengurus', function () {
 Route::get('/tentang', function () {
     return view('user/tentang',[
         "title" => "tentang"
+    ]);
+});
+
+Route::fallback(function () {
+    return view('user/beranda',[
+        "title" => "beranda"
     ]);
 });
 
