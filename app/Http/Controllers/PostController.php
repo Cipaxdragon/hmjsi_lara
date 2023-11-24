@@ -14,7 +14,7 @@ class PostController extends Controller
             "post" => Post::all()
         ]);
     }
-    public function singlepost(Post $post){
+    public function show(Post $post){
         return view('user/postingan',[
             "title" => $post->title,
             "post" => $post,
