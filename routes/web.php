@@ -3,6 +3,7 @@
 use App\Http\Controllers\PostController;
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,10 +34,16 @@ Route::fallback(function () {
 
 
 Route::get('/kategori/{category:slug}', function(Category $category){
+    $posts = $category->post;
+    $posts->each(function ($post) {
+        $post->excerpt = Str::limit($post->excerpt, 66);
+    });
+
     return view('user/kategori',[
         'title' => $category->nama,
-        'post' => $category->post,
-        'category' => $category->nama,
+        'slug' => $category->slug,
+        'post' => $posts,
+        'kategori' => Category::all(),
     ]);
 
     // return "tes";
