@@ -6,23 +6,15 @@ use App\Models\Post;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('user/beranda',[
-        "title" => "beranda"
-    ]);
-});
+
+Route::get('/', [PostController::class,'beranda']);
+Route::get('/tentang', [PostController::class,'beranda']);
+Route::get('/beranda', [PostController::class,'beranda']);
 
 Route::get('/berita', [PostController::class,'index']);
-
 Route::get('/pengurus', function () {
     return view('user/pengurus',[
         "title" => "pengurus"
-    ]);
-});
-
-Route::get('/tentang', function () {
-    return view('user/tentang',[
-        "title" => "tentang"
     ]);
 });
 
@@ -33,19 +25,5 @@ Route::fallback(function () {
 });
 
 
-Route::get('/kategori/{category:slug}', function(Category $category){
-    $posts = $category->post;
-    $posts->each(function ($post) {
-        $post->excerpt = Str::limit($post->excerpt, 66);
-    });
-
-    return view('user/kategori',[
-        'title' => $category->nama,
-        'slug' => $category->slug,
-        'post' => $posts,
-        'kategori' => Category::all(),
-    ]);
-
-    // return "tes";
-});
+Route::get('/kategori/{category:slug}', [PostController::class, 'showKategori']);
 Route::get('/{post:slug}', [PostController::class,'show']);

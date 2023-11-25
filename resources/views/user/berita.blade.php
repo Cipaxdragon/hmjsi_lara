@@ -11,7 +11,7 @@
         <div class="nav-scroller py-1 mb-3 border-bottom">
             <nav class="nav nav-underline justify-content-between">
                 @foreach ($kategori as $item)
-                    <a class="nav-item nav-link link-body-emphasis " href="/kategori/{{ $item->slug }}">{{ $item->nama }}</a>
+                    <a class="nav-item nav-link link-body-emphasis  " href="/kategori/{{ $item->slug }}">{{ $item->nama }}</a>
                 @endforeach
             </nav>
         </div>
@@ -25,7 +25,7 @@
                             <h3 class="mb-0">{{ $post->title }}</h3>
                             <div class="mb-1 text-body-secondary">Nov 12</div>
                             <p class="card-text mb-auto">{{ $post->excerpt }}</p>
-                            <a href="/{{ $post->slug }}" class="icon-link gap-1 icon-link-hover stretched-link">
+                            <a href="/{{ $post->slug }}" class="icon-link gap-1 icon-link-hover stretched-link text-decoration-none">
                                 Baca Selengkapnya
                                 <svg class="bi">
                                     <use xlink:href="#chevron-right"></use>
