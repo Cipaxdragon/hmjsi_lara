@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\PostController;
 use App\Models\Category;
 use App\Models\Post;
@@ -12,11 +13,7 @@ Route::get('/tentang', [PostController::class,'beranda']);
 Route::get('/beranda', [PostController::class,'beranda']);
 
 Route::get('/berita', [PostController::class,'index']);
-Route::get('/pengurus', function () {
-    return view('user/pengurus',[
-        "title" => "pengurus"
-    ]);
-});
+Route::get('/pengurus', [PengurusController::class,'index']);
 
 Route::fallback(function () {
     return view('user/beranda',[
@@ -25,5 +22,5 @@ Route::fallback(function () {
 });
 
 
-Route::get('/kategori/{category:slug}', [PostController::class, 'showKategori']);
+Route::get('/kategori/{divisi:slug}', [PostController::class, 'showDivisi']);
 Route::get('/{post:slug}', [PostController::class,'show']);

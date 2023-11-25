@@ -7,8 +7,8 @@
         <header>
           <h1 class="mt-4">{{ $post->title }}</h1>
           <p class="lead">{{ $post->user->name }}   - Tanggal -
-            <a class="text-decoration-none" href="/kategori/{{ $post->category->slug }}">
-                Divisi {{ $post->category->nama }} </p>
+            <a class="text-decoration-none" href="/kategori/{{ $post->divisi->slug }}">
+                Divisi {{ $post->divisi->nama }} </p>
             </a>
         </header>
         <hr>

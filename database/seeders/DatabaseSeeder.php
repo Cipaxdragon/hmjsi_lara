@@ -5,6 +5,8 @@ use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Category;
+use App\Models\divisi;
+use App\Models\Pengurus;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,28 +20,34 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(5)->create();
 
 
-        Category::create([
+        divisi::create([
             'nama' => 'Keilmuan',
             'slug' => 'keilmuan',
+            'deksripsi' => 'divisi yang menangani',
         ]);
-        Category::create([
+        divisi::create([
             'nama' => 'Komunikasi dan Informasi',
             'slug' => 'kominfo',
+            'deksripsi' => 'divisi yang menangani',
         ]);
-        Category::create([
+        divisi::create([
             'nama' => 'Hubungan dan Masyarakat',
             'slug' => 'humas',
+            'deksripsi' => 'divisi yang menangani',
         ]);
-        Category::create([
+        divisi::create([
             'nama' => 'Kaderisasi',
             'slug' => 'kaderisasi',
+            'deksripsi' => 'divisi yang menangani',
         ]);
-        Category::create([
+        divisi::create([
             'nama' => 'Kesektariatan dan Logistik',
             'slug' => 'keslog',
+            'deksripsi' => 'divisi yang menangani',
         ]);
 
         Post::factory(20)->create();
+        Pengurus::factory(20)->create();
 
         // Post::create([
         //     'title' => 'HMJ ta beku',

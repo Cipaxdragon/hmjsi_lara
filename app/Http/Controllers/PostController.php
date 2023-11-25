@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Str;
-use App\Models\Category;
+use App\Models\divisi;
 use App\Models\Post;
 use App\Models\Postingan;
 use Illuminate\Http\Request;
@@ -19,7 +19,7 @@ class PostController extends Controller
         return view('user/berita',[
             "title" => "berita",
             "post" => $posts,
-            "kategori" => Category::all()
+            "kategori" => divisi::all()
         ]);
     }
 
@@ -32,18 +32,14 @@ class PostController extends Controller
         ]);
     }
 
-    public function showKategori(Category $category)
+    public function showDivisi(divisi $divisi)
     {
-        $posts = $category->post;
-        $posts->each(function ($post) {
-            $post->excerpt = Str::limit($post->excerpt, 66);
-        });
-
+        $posts = $divisi->post;
         return view('user.kategori', [
-            'title' => $category->nama,
-            'slug' => $category->slug,
+            'title' => $divisi->nama,
+            'slug' => $divisi->slug,
             'post' => $posts,
-            'kategori' => Category::all(),
+            'kategori' => divisi::all(),
         ]);
     }
 
