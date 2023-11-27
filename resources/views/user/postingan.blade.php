@@ -12,7 +12,7 @@
             </a>
         </header>
         <hr>
-        <img src="https://via.placeholder.com/800x400" class="img-fluid" alt="Gambar Postingan">
+        <img src="https://source.unsplash.com/800x400" class="img-fluid" alt="Gambar Postingan">
         <hr>
         <p class="justfy-text">{!! $post->body !!}</p>
         <hr>

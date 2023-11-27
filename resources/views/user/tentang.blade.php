@@ -3,12 +3,9 @@
 
 @section('container')
 
-<div class="container  ">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src="https://getbootstrap.com/docs/5.3/examples/heroes/bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-      </div>
-      <div class="col-lg-6">
+<div class="container d-flex">
+    <div class="container">
+      <div class="container">
         <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Responsive left-aligned hero with image</h1>
         <p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
@@ -16,6 +13,10 @@
           <button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
         </div>
       </div>
+      <div class="container">
+        <img src="https://getbootstrap.com/docs/5.3/examples/heroes/bootstrap-themes.png" class="d-block mx-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="eager">
+      </div>
+
     </div>
   </div>
 
@@ -74,7 +75,7 @@
                 <img src="https://fakeimg.pl/600x400" class="card-img-top" alt="Gambar Berita 1">
                 <div class="card-body">
                     <h5 class="card-title">{{ $post->title }}</h5>
-                    <p class="card-text">{{ $post->category->slug }}</p>
+                    <p class="card-text">{{ $post->divisi->slug }}</p>
                     <p class="card-date">25 November 2023</p>
                     <p class="card-text">{{ $post->excerpt }}</p>
                     <a href="/{{ $post->slug }}" class="btn btn-primary">Lihat Selengkapnya</a>

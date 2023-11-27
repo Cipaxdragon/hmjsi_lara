@@ -18,6 +18,7 @@ class PostFactory extends Factory
             'excerpt' => $this->faker->sentence(10),
             'body' => $this->faker->paragraph(100),
             'user_id' => mt_rand(1,5),
+            'created_at' => $this->faker->time('H:i:s','now'),
             'divisi_id' => mt_rand(1,5),
         ];
     }

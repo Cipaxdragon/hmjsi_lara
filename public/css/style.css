@@ -10,4 +10,20 @@
  ::-webkit-scrollbar-thumb:hover {
     background: #1245ba;
  }
-/*
+
+#header-hero-1{
+    margin-bottom: 200px;
+}
+body{
+    padding: 0px;
+}
+#header-hero{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-image: url('https://source.unsplash.com/1600x900?white');
+    background-position: center;
+}
+.container-fluid{
+    padding-right: 0px;
+    padding-left: 0px;
+}
