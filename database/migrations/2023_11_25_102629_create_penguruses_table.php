@@ -19,6 +19,7 @@ class CreatePengurusesTable extends Migration
             $table->foreignId('divisi_id');
             $table->integer('jabatan');
             $table->string('medsos');
+            $table->string('gambar');
             $table->timestamps();
         });
     }

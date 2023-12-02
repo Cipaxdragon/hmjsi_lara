@@ -8,20 +8,24 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Route;
 
 
-//beranda
+
 Route::get('/', [PostController::class,'beranda']);
 Route::get('/beranda', [PostController::class,'beranda']);
 
-
 //about
-Route::get('/tentang', [PostController::class,'beranda']);
-
+// Route::get('/tentang', [PostController::class,'beranda']);
+//jika tidak ada sama semakali
+Route::get('/tentang', function () {
+    return view('user.tentang',[
+        "title" => "tentang"
+    ]);
+});
 
 //berita
 Route::get('/berita', [PostController::class,'index']);
 
 //pengurus
-Route::get('/pengurus', [PengurusController::class,'index']);
+Route::get('/pengurus', [PengurusController::class,'pengursshow']);
 
 
 //jika tidak ada sama semakali

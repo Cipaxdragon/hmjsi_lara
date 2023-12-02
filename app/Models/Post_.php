@@ -3,7 +3,7 @@
 namespace App\Models;
 
 
-class Post 
+class Post
 {
     private static $post = [
     [
@@ -34,6 +34,6 @@ class Post
         return $post->firstWhere('slug',$slug);
     }
 
-    
+
 
 }

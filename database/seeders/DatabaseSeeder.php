@@ -18,36 +18,63 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\User::factory(5)->create();
+        Pengurus::create([
+            'nama' => 'Adam',
+            'divisi_id' => 2,
+            'jabatan' => 1,
+            'medsos' => "adam",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744171072200794/Adam.png?ex=654b9a2f&is=6539252f&hm=c70c67c1c2439727abbf1b64ab0225eb6051f2e6edd859febc97b0604f263b23&',
+        ]);
+        Pengurus::create([
+            'nama' => 'Nadyah Adawiyah',
+            'divisi_id' => 2,
+            'jabatan' => 2,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744168639504446/Nadya.png?ex=654b9a2e&is=6539252e&hm=0f8a2f2b7d4011160f9f503ae631c2366aec9db426b02eeb51d4abff7d81617d&',
+        ]);
+        Pengurus::create([
+            'nama' => 'Ahmad Ghazali',
+            'divisi_id' => 2,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744168257814588/Ghazali.png?ex=654b9a2e&is=6539252e&hm=c2549eb688a0b900b73342b357e142199a5a77378f8f379c8b1597e4471c9d57&',
+        ]);
+
 
 
         divisi::create([
             'nama' => 'Keilmuan',
             'slug' => 'keilmuan',
-            'deksripsi' => 'divisi yang menangani',
+            'deksripsi' => 'Divisi ini bertanggung jawab untuk mengembangkan pengetahuan dan keterampilan anggota terkait dengan bidang ilmu sistem informasi. Mereka dapat menyelenggarakan seminar, workshop, atau pelatihan untuk meningkatkan pemahaman anggota terhadap perkembangan terkini dalam dunia sistem informasi.',
         ]);
+
+
+
         divisi::create([
             'nama' => 'Komunikasi dan Informasi',
             'slug' => 'kominfo',
-            'deksripsi' => 'divisi yang menangani',
+            'deksripsi' => 'Divisi ini fokus pada pengelolaan komunikasi internal dan eksternal organisasi. Tugas utama mereka melibatkan pembuatan dan penyuntingan materi promosi, seperti flyer, untuk keperluan acara dan informasi organisasi. Mereka juga dapat mengelola platform media sosial dan situs web untuk menjaga hubungan baik dengan anggota dan publik.
+            ',
         ]);
+
         divisi::create([
             'nama' => 'Hubungan dan Masyarakat',
             'slug' => 'humas',
-            'deksripsi' => 'divisi yang menangani',
+            'deksripsi' => 'Divisi ini bertanggung jawab untuk membangun dan menjaga hubungan baik antara organisasi dan pihak eksternal, seperti perusahaan, institusi pendidikan, dan masyarakat umum. Mereka dapat mengelola kegiatan promosi, bekerja sama dengan mitra eksternal, serta merancang strategi untuk meningkatkan citra organisasi.',
         ]);
         divisi::create([
             'nama' => 'Kaderisasi',
             'slug' => 'kaderisasi',
-            'deksripsi' => 'divisi yang menangani',
+            'deksripsi' => 'Divisi ini bertujuan untuk membentuk dan mengembangkan kader-kader yang berkualitas di dalam organisasi. Mereka mengelola program pelatihan, mentoring, dan orientasi bagi anggota baru agar dapat berkontribusi secara maksimal dalam organisasi.',
         ]);
         divisi::create([
             'nama' => 'Kesektariatan dan Logistik',
             'slug' => 'keslog',
-            'deksripsi' => 'divisi yang menangani',
+            'deksripsi' => 'Divisi ini memiliki dua tanggung jawab utama. Pertama, mereka memastikan bahwa semua kegiatan organisasi berjalan dengan lancar melalui manajemen logistik, termasuk pengaturan tempat, peralatan, dan kebutuhan lainnya. Kedua, mereka fokus pada kegiatan yang mendukung kesetaraan dan keadilan di dalam organisasi serta dapat terlibat dalam proyek-proyek sosial yang mendukung nilai-nilai ini.',
         ]);
 
         Post::factory(20)->create();
-        Pengurus::factory(20)->create();
+        // Pengurus::factory(20)->create();
 
         // Post::create([
         //     'title' => 'HMJ ta beku',

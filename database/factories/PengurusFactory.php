@@ -18,6 +18,7 @@ class PengurusFactory extends Factory
             'divisi_id' => $this->faker->numberBetween(1,5),
             'jabatan' => $this->faker->numberBetween(1,3),
             'medsos' => $this->faker->email(),
+            'gambar' => $this->faker->email(),
         ];
     }
 }

@@ -19,10 +19,9 @@ class PostController extends Controller
             "kategori" => divisi::all()
         ]);
     }
-
     public function beranda(){
         //mengambil dari model kemudian mengurutkan yang terbaru lalu mengamil 3 biji
-        $post = Post::with('divisi')->orderBy('created_at', 'desc')->take(3)->get();
+        $post = Post::with('divisi')->orderBy('created_at', 'desc')->take(4)->get();
         return view('user/beranda',[
             "title" => 'HMJ-SI',
             "post" => $post,
@@ -40,10 +39,8 @@ class PostController extends Controller
         ]);
     }
 
-    public function sortDivisi(divisi $divisi)
-        {
+    public function sortDivisi(divisi $divisi){
             $posts = $divisi->post;
-
             return view('user.berita', [
                 'title' => $divisi->nama,
                 'slug' => $divisi->slug,
@@ -52,17 +49,12 @@ class PostController extends Controller
             ]);
         }
 
-
-
     public function show(Post $post){
         $randomData = Post::inRandomOrder()->take(3)->get(); // Mengambil 5 data secara acak
-
-
         return view('user/postingan',[
             "title" => $post->title,
             "post" => $post,
             "recent" => $randomData,
         ]);
-
     }
 }

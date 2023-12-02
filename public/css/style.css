@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+body{
+    font-family: 'Montserrat';
+}
+
 ::-webkit-scrollbar {
     display: fixed;
     background-color: white;
@@ -11,19 +17,102 @@
     background: #1245ba;
  }
 
-#header-hero-1{
-    margin-bottom: 200px;
-}
 body{
     padding: 0px;
 }
 #header-hero{
     width: 100%;
     background-repeat: no-repeat;
-    background-image: url('https://source.unsplash.com/1600x900?white');
+    /* background-image: url('https://source.unsplash.com/1600x7?white'); */
     background-position: center;
 }
+
 .container-fluid{
     padding-right: 0px;
     padding-left: 0px;
+}
+
+section{
+    margin-bottom: 100px;
+    min-height: 600px;
+}
+#header-hero-1 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 793px;
+    background-image: url('https://source.unsplash.com/1600x764?white');
+}
+
+.kon{
+    border-color: red solid 1px;
+}
+
+.nav-item-animasi{
+    transition: 0.3s;
+}
+
+.nav-item-animasi:hover{
+    color: #0d2e7b;
+    transform: scale(1.1);
+}
+.nav-link{
+    color: inherit;
+}
+
+/* Tambahkan gaya untuk kelas "fix-to-top" */
+.navbar.fix-to-top {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Sesuaikan gaya lainnya sesuai kebutuhan */
+  }
+
+
+/* Tambahkan gaya untuk efek fade */
+.carousel-item {
+    transition: opacity 1s ease-in-out;
+}
+
+/* Atur opasitas pada item yang tidak aktif */
+.carousel-item:not(.active) {
+    opacity: 0.5;
+}
+.animated-element {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 0.5s ease;
+}
+
+.animated-element.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+.gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin: -15px; /* Mengatasi margin dari kolom */
+    }
+
+    .gallery-item {
+      padding: 15px;
+    }
+
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.1);
+    }
+
+
+.hover-scale{
+    transition: transform 0.3s ease-in-out;
+}
+.hover-scale:hover{
+    transform: scale(1.1);
 }
