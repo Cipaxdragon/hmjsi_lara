@@ -185,8 +185,10 @@
         <h3 class=" fw-bold mx-auto text-center mx-lg-0 mb-5">Galery</h3>
 
         <div class="gallery-container">
-            <div class="gallery-item col-md-4">
-                <img src="https://source.unsplash.com/500x500?white" alt="Image 1">
+            <div class="gallery-item col-md-4 rounded ">
+                <div class="overflow-hidden " style="width: 411px; height: 411px; ">
+                    <img src="https://cdn.discordapp.com/attachments/1152085105641279519/1180512142340923513/DSC09925.JPG?ex=657db09b&is=656b3b9b&hm=80317ca7f5e87b3c3e8429e38307e602ed99f917f3578fbbd3812f4d14182b95&" class="object-fit-cover h-100" alt="Image 1">
+                </div>
             </div>
             <div class="gallery-item col-md-4">
                 <img src="https://source.unsplash.com/500x500?white" alt="Image 2">

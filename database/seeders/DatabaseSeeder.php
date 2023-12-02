@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\divisi;
+use App\Models\Galery;
+use App\Models\Kegiatan;
 use App\Models\Pengurus;
 
 class DatabaseSeeder extends Seeder
@@ -268,13 +270,10 @@ class DatabaseSeeder extends Seeder
             'medsos' => "",
             'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744203473191053/Kratos.png?ex=654b9a37&is=65392537&hm=d27bbb77abbc317ead82c0be4996c5dc228cbe44c71149d7240244fb4238998d&',
         ]);
-
-
-
-
-
-
-
+        Galery::create([
+            'link' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1180512142340923513/DSC09925.JPG?ex=657db09b&is=656b3b9b&hm=80317ca7f5e87b3c3e8429e38307e602ed99f917f3578fbbd3812f4d14182b95&',
+            'kegiatan_id' => '1',
+        ]);
 
 
         divisi::create([
@@ -309,6 +308,8 @@ class DatabaseSeeder extends Seeder
 
 
         Post::factory(20)->create();
+        Kegiatan::factory(20)->create();
+        Galery::factory(20)->create();
         // Pengurus::factory(20)->create();
 
         // Post::create([
