@@ -135,7 +135,7 @@ class DatabaseSeeder extends Seeder
             'medsos' => "",
             'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744302546845847/Vey.png?ex=654b9a4e&is=6539254e&hm=dfed71194043c782a77f22c66af43b8d2b3ac61567441c79b0db0694fa329ea9&',
         ]);
-       Pengurus::create([
+        Pengurus::create([
             'nama' => 'Ilham Ramadhan',
             'divisi_id' => 3,
             'jabatan' => 3,
@@ -171,6 +171,108 @@ class DatabaseSeeder extends Seeder
             'medsos' => "",
             'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744301045301288/Intan.png?ex=654b9a4e&is=6539254e&hm=2f456ea7627b81b9643fdeba2f62f756df6bf00aa909c8602b71cb7f431489b9&',
         ]);
+        Pengurus::create([
+            'nama' => 'Alif Daffa Rivai',
+            'divisi_id' => 4,
+            'jabatan' => 1,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744260532518912/Aldaf.png?ex=654b9a44&is=65392544&hm=49c2b8325bec31c566c50f21ccac81bde082fa6ba914ae8f7ccfe2e6223921cd&',
+        ]);
+
+        Pengurus::create([
+            'nama' => 'Hayar Usman',
+            'divisi_id' => 4,
+            'jabatan' => 2,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744262541586503/Hayar.png?ex=654b9a45&is=65392545&hm=0a3f1aac9fb662063d9b5aeccabc73fd423942cb82fd7ad4cf3ade6c737051da&',
+        ]);
+        Pengurus::create([
+            'nama' => 'Muh Fajrin',
+            'divisi_id' => 4,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744261694341161/Fajrin.png?ex=654b9a45&is=65392545&hm=5afc4a967de3b67d0cc609ff856d394da198fd302fb9fa666542063ca293bf55&',
+        ]);
+        Pengurus::create([
+            'nama' => ' Nurhidayat',
+            'divisi_id' => 4,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744262088609922/Genjieh.png?ex=6579bec5&is=656749c5&hm=546794616c54be9a26272cf35694c36600b1635ba1110b5bfb8250bd6233ef0e&',
+        ]);
+        Pengurus::create([
+            'nama' => 'Isyal',
+            'divisi_id' => 4,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744263070072842/Isyal.png?ex=654b9a45&is=65392545&hm=2d2b779e7e1b064c42902893580cf17f420f5d5fc9aa019b8e106dba41d8d92d&',
+        ]);
+        Pengurus::create([
+            'nama' => 'Aqilah Nurul Fauziah',
+            'divisi_id' => 4,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744263971852348/Kila.png?ex=654b9a45&is=65392545&hm=a80fc1ddfc591af4f63525676af40242f4ec715180189c79aa2a7d2edc3c8ae4&',
+        ]);
+
+        Pengurus::create([
+            'nama' => 'Nurul Fadhillah Nur',
+            'divisi_id' => 4,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744261107134484/Dilot.png?ex=654b9a44&is=65392544&hm=bee53f055b17886d081b74dd720c70fa41ec0372d11e92bd2f8f1998e7d95eaa&',
+        ]);
+        Pengurus::create([
+            'nama' => 'Dina',
+            'divisi_id' => 5,
+            'jabatan' => 1,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744202563035177/Dina.png?ex=654b9a36&is=65392536&hm=309f41fcbdf67fc572acb97c4a31fd8c73b0f7777eb6fadb8e4d9278afa2cad1&',
+        ]);
+
+
+        Pengurus::create([
+            'nama' => 'Amel Krisandaresta',
+            'divisi_id' => 5,
+            'jabatan' => 2,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744205037666454/Amel.png?ex=654b9a37&is=65392537&hm=9d2adfc167ed116d7b18491119fdd7dffc47d84f02b0d9c398864131a02d004b&',
+        ]);
+
+        Pengurus::create([
+            'nama' => 'Murni',
+            'divisi_id' => 5,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744203993292840/Murni.png?ex=654b9a37&is=65392537&hm=1b913f7241ebdb9931ad43d1ce35188053503400725738a4f4e429c63e76336e&',
+        ]);
+
+        Pengurus::create([
+            'nama' => 'Hilda Safitri',
+            'divisi_id' => 5,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744203083124758/Ilda.png?ex=654b9a37&is=65392537&hm=0d49c8c7b76e05a1d9de9b3449421695778ca3aa29219438fe90929839175f90&',
+        ]);
+        Pengurus::create([
+            'nama' => 'Irmayanti',
+            'divisi_id' => 5,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744204584685618/Rawr.png?ex=654b9a37&is=65392537&hm=8205f8048faae6a4be940cfdd1782f70156d4ce8528f1e76dd7530bc89a4b3e5&',
+        ]);
+        Pengurus::create([
+            'nama' => 'Muhammad Aiman',
+            'divisi_id' => 5,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744203473191053/Kratos.png?ex=654b9a37&is=65392537&hm=d27bbb77abbc317ead82c0be4996c5dc228cbe44c71149d7240244fb4238998d&',
+        ]);
+
+
+
+
+
 
 
 

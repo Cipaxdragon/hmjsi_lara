@@ -110,6 +110,13 @@ class PengurusSeeder extends Seeder
             'medsos' => "",
             'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744233844154548/Risal.png?ex=654b9a3e&is=6539253e&hm=697b81a62b74deeca23d66af96c927a3bdc36a7cb5552107cbadbb18c6dd7596&',
         ]);
+        Pengurus::create([
+            'nama' => 'Dina',
+            'divisi_id' => 1,
+            'jabatan' => 3,
+            'medsos' => "",
+            'gambar' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1166744233844154548/Risal.png?ex=654b9a3e&is=6539253e&hm=697b81a62b74deeca23d66af96c927a3bdc36a7cb5552107cbadbb18c6dd7596&',
+        ]);
 
 
     }
