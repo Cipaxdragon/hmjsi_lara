@@ -293,7 +293,7 @@
         <h3 class=" fw-bold mx-auto text-center mx-lg-0 mb-5">Berikan Kritik dan Saran</h3>
         <div class="row">
             <div class="col-lg-6  offset-lg-3">
-                <form>
+                <form action="/beranda">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama:</label>
                         <input type="text" autocomplete="off" class="form-control" id="nama" name="nama" required>
