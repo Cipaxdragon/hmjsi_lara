@@ -17,10 +17,13 @@ class CreateKegiatansTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('slug');
-            $table->string('body_text');
+            $table->text('excerpt')->nullable();
+            $table->text('body_text');
             $table->dateTime('tanggal');
-            $table->string('gambar');
-            $table->foreignId('galery_id');
+            $table->string('gambar')->nullable();
+            $table->foreignId('galery_id')->nullable();
+            $table->foreignId('divisi_id')->nullable();
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
     }

@@ -38,3 +38,5 @@ Route::fallback(function () {
 
 Route::get('/kategori/{divisi:slug}', [PostController::class, 'sortDivisi']);
 Route::get('/{post:slug}', [PostController::class,'show']);
+
+Route::get('/kegiatan/{kegiatan:slug}', [PostController::class, 'KegiatanShow']);

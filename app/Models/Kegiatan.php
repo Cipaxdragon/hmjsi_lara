@@ -13,4 +13,30 @@ class Kegiatan extends Model
     public function galery(){
         return $this->hasMany(Galery::class);
     }
+
+    public function divisi(){
+        return $this->belongsTo(divisi::class);
+    }
+    public function batasi($text, $limit = 50) {
+        // Memeriksa apakah teks lebih panjang dari batas yang ditentukan
+        if (mb_strlen($text) > $limit) {
+            // Mengambil sebagian teks sesuai dengan batas yang ditentukan
+            $limitedText = mb_substr($text, 0, $limit);
+
+            // Menambahkan tanda elipsis di akhir teks
+            $limitedText .= '...';
+
+            return $limitedText;
+        }
+
+        // Jika teks tidak melebihi batas, kembalikan teks asli
+        return $text;
+    }
+
+
+    public function tanggal($value)
+    {
+        // Ubah format tanggal menggunakan Carbon
+        return \Carbon\Carbon::parse($value)->format('d F Y');
+    }
 }

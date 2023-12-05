@@ -33,9 +33,9 @@
                         organisasi yang kondusif dan dinamis
                     </p>
                     <div class="d-flex justify-content-start mx-auto mx-lg-0">
-                        <button class="btn btn-outline-primary d-inline-flex " type="button">
+                        <a href="/tentang" class="btn btn-outline-primary d-inline-flex " type="button">
                             Kenali Kami Lebih lanjut
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -78,12 +78,11 @@
     <div class="container px-5 ">
         <h3 class=" fw-bold mx-auto text-center mx-lg-0 mb-5">Kegiatan Terkini</h3>
 
-        <div class="row  ">
+        <div class="row ">
             @foreach ($post as $item)
-
-            <div class="col-lg-3 col mb-4 animated-element">
+            <div class="col-lg-3 col mb-4 animated-element" >
                 <div class="container d-flex justify-content-center align-items-center ">
-                    <div class="card shadow overflow-hidden " style="width: 18rem;">
+                    <div class="card shadow overflow-hidden " style="width: 18rem; ">
                         <div class="overflow-hidden" style="width: 100%;">
                             <img class="object-fit-cover img-fluid " src="https://source.unsplash.com/300x158?white"
                                 alt="Card image cap">
@@ -91,8 +90,8 @@
                         <div class="card-body overflow-hidden ">
                             <a href="" class="badge bg-secondary text-white  fw-light">{{$item->divisi->nama}}</a>
                             <h5 class="card-title fs-6 my-2">
-                                <a href="" class="text-black">
-                                    {{$item->title}}
+                                <a href="/kegiatan/{{$item->slug}}" class="text-black">
+                                    {{$item->batasi($item->nama)}}
                                 </a>
                             </h5>
                             <h6 class="card-subtitle mb-2 text-muted fw-light fs-6">{{$item->created_at->diffForHumans()}} </h6>
@@ -304,12 +303,10 @@
                         <label for="email" class="form-label">Email:</label>
                         <input type="email" autocomplete="off" class="form-control" id="email" name="email" required>
                     </div>
-
                     <div class="mb-3">
                         <label for="kritik" class="form-label">Kritik atau Saran:</label>
                         <textarea autocomplete="off" class="form-control" id="kritik" name="kritik" rows="4" required></textarea>
                     </div>
-
                     <button type="submit" class="btn btn-primary">Kirim</button>
                 </form>
             </div>

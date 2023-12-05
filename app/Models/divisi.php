@@ -17,5 +17,10 @@ class divisi extends Model
     public function pengurus(){
             return $this->hasMany(Pengurus::class);
     }
+    public function tanggal($value)
+    {
+        // Ubah format tanggal menggunakan Carbon
+        return \Carbon\Carbon::parse($value)->format('d F Y');
+    }
 
 }

@@ -82,7 +82,7 @@
             <div class="row p-lg-0 ">
                <div class="col-lg-2"></div>
                @foreach ($item->pengurus->whereBetween('jabatan', [1, 2]) as $ketua)
-               <div class="col-lg-4  mb-5">
+               <div class="col-lg-4   p-lg-3 p-3 mb-1">
                   <div class="card overflow-hidden shadow position-relative border-bottom border-5 ">
                      <div class="card-img d-flex justify-content-center align-items-center  hover-scale">
                         <img src="{{ $ketua->gambar }}" class="img-fluid h-100" alt="">
@@ -90,11 +90,11 @@
                      <div class="card-title position-absolute top-100 start-50  translate-middle d-flex justify-content-center align-items-center flex-column"
                         style="top: 90% !important;">
                         <h5
-                           class="card-title text-nowrap text-center rounded bg-white  fw-bold d-block px-3 py-1 text-primary d-inline-block border-bottom border-5 border-secondary">
+                           class="card-title text-nowrap text-center rounded bg-white  fw-bold d-block px-3 py-1 text-primary d-inline-block border-bottom border-5 border-secondary ">
                            {{ $ketua->nama }}
                         </h5>
                         <h5
-                           class="fs-7 rounded bg-white text-center   px-2  text-primary d-inline-block border-bottom border-5 border-secondary">
+                           class="fs-8 rounded bg-white text-center  text-nowrap  px-2  text-primary d-inline-block border-bottom border-5 border-secondary">
                            {{ $ketua->jabatan === 1 ? 'Ketua Divisi' : 'Wakil Ketua Divisi' }}
                         </h5>
                      </div>
@@ -105,7 +105,7 @@
             <div class="row p-lg-0 ">
                <h5 class="text-center  mb-4 fw-bold text-primary p-0 mb-5">Anggota</h5>
                @foreach ($item->pengurus->where('jabatan', 3) as $anggota)
-               <div class="col-lg-3  mb-5">
+               <div class="col-lg-3 col-6 p-0 m-0 p-lg-2  mb-5">
                   <div class="card overflow-hidden shadow position-relative border-bottom border-5 ">
                      <div
                         class="card-img d-flex justify-content-center align-items-center   hover-scale">
@@ -114,7 +114,7 @@
                      <div class="card-title position-absolute top-100 start-50  translate-middle"
                         style="top: 90% !important;">
                         <h5
-                           class="card-title text-nowrap text-center rounded bg-white fw-bold d-block p-1 text-primary d-inline-block border-bottom border-2 border-secondary fs-8 ">
+                           class="card-title text-nowrap text-center rounded bg-white fw-bold d-block p-1 text-primary d-inline-block border-bottom border-2 border-secondary fs-7 ">
                            {{ $anggota->nama }}
                         </h5>
                      </div>
@@ -251,8 +251,6 @@
                    class="h-100  hover-scale" alt="">
              </div>
           </div>
-
-
           <div class="col-lg-3  mb-5">
              <div class="card rounded shadow  overflow-hidden">
                 <img
@@ -260,10 +258,7 @@
                    class="h-100  hover-scale" alt="">
              </div>
           </div>
-
-
        </div>
     </div>
  </section>
-
 @endsection
