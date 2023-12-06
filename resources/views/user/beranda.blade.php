@@ -77,7 +77,6 @@
 <section>
     <div class="container px-5 ">
         <h3 class=" fw-bold mx-auto text-center mx-lg-0 mb-5">Kegiatan Terkini</h3>
-
         <div class="row ">
             @foreach ($post as $item)
             <div class="col-lg-3 col mb-4 animated-element" >

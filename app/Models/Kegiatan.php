@@ -14,6 +14,27 @@ class Kegiatan extends Model
         return $this->hasMany(Galery::class);
     }
 
+
+    public function scopeFilter($query, array $filters){
+
+        $query->when($filters['search']?? false, function($query,$search){
+            return $query->where('nama', 'like', '%' . $search . '%')
+                ->orWhere('body_text', 'like', '%' . $search . '%');
+        });
+
+        $query->when($filters['divisi'] ?? false, function ($query, $divisi) {
+            // Ganti divisi::all() dengan Eloquent query
+            $query->whereHas('divisi', function ($query) use ($divisi) {
+                $query->where('slug', $divisi);
+            });
+
+            // Pastikan memberikan nilai kembali $query
+            return $query;
+        });
+
+    }
+
+
     public function divisi(){
         return $this->belongsTo(divisi::class);
     }

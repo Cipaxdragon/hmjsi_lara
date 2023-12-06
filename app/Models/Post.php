@@ -11,6 +11,8 @@ class Post extends Model
     protected $table = "posts";
     protected $guarded = ['id'];
 
+    
+
     public function divisi(){
         return $this->belongsTo(divisi::class);
     }

@@ -9,11 +9,11 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item nav-item-animasi">
-                    <a class="nav-link   " style="color: inherit" href="/">Beranda</a>
+                <li class="nav-item nav-item-animasi ">
+                    <a class="nav-link active" style="color: inherit" href="/">Beranda</a>
                 </li>
                 <li class="nav-item nav-item-animasi">
-                    <a class="nav-link  " style="color: inherit" href="/berita">Informasi</a>
+                    <a class="nav-link  " style="color: inherit" href="/kegiatan">Informasi</a>
                 </li>
                 <li class="nav-item nav-item-animasi">
                     <a class="nav-link " style="color: inherit" href="/pengurus">Pengurus</a>

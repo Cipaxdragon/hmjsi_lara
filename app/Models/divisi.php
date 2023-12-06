@@ -14,6 +14,10 @@ class divisi extends Model
     public function post(){
         return $this->hasMany(Post::class);
     }
+    public function kegiatan(){
+        return $this->hasMany(Kegiatan::class);
+    }
+
     public function pengurus(){
             return $this->hasMany(Pengurus::class);
     }

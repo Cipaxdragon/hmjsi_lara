@@ -10,18 +10,36 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
-        //mempersingkat excerpt
+    public function index()
+    {
         $posts = Post::with('divisi')->latest()->get();
-        $kegiatan = Kegiatan::latest()->get();
-        // $kegiatan = Kegiatan::with('divisi')->latest()->get();
-        return view('user/kegiatan',[
-            "title" => "berita",
+
+        $kegiatan = Kegiatan::with('divisi')->orderByDesc('tanggal');
+
+        return view('user/kegiatan', [
+            "title" => "Informasi",
             "post" => $posts,
-            "kegiatan" => $kegiatan,
-            "kategori" => divisi::all()
+            "berhasil" => "berhasil",
+            "kegiatan" => $kegiatan->filter(request(['search','divisi']))->paginate(5),
+            "kategori" => Divisi::all()
         ]);
     }
+    public function KegiatanDivisi(divisi $divisi)
+    {
+        $divisi->nama;
+        $posts = Post::with('divisi')->latest()->get();
+
+
+        return view('user/kegiatan', [
+            "title" =>  $divisi->slug,
+            "post" => $posts,
+            "kegiatan" => $divisi->kegiatan->sortBy('created_at'),
+            "kategori" => Divisi::all()
+        ]);
+    }
+
+
+
     public function beranda(){
         //mengambil dari model kemudian mengurutkan yang terbaru lalu mengamil 3 biji
         $post = Kegiatan::with('divisi')->orderBy('created_at', 'desc')->take(4)->get();
