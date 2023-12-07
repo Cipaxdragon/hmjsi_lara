@@ -60,4 +60,10 @@ class Kegiatan extends Model
         // Ubah format tanggal menggunakan Carbon
         return \Carbon\Carbon::parse($value)->format('d F Y');
     }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+
+    }
 }

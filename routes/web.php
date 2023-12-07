@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardKegiatanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\PostController;
@@ -20,7 +21,14 @@ Route::post('/login', [LoginController::class,'autenticate']);
 Route::post('/logout', [LoginController::class,'logout']);
 Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register', [RegisterController::class,'store']);
-Route::get('/dashboard', [DashboardController::class,'index'])->middleware('auth');
+
+Route::get('/dashboard', function (){
+    return view('admin.dashboard');}
+    )->middleware('auth');
+
+Route::resource('/dashboard/kegiatan', DashboardKegiatanController::class)->middleware(['auth']);
+// Route::resource('/dashboard/kegiatan', DashboardKegiatanController::class,'index');
+
 
 
 //about
