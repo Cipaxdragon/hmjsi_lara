@@ -38,6 +38,8 @@
     </script>
     <script src="js/bootstrap.js"></script>
     <script src="js/main.js"></script>
+    <script src="..\boostrap\js\bootstrap.bundle.js"></script>
+
 </body>
 
 </html>

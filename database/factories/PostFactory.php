@@ -16,7 +16,10 @@ class PostFactory extends Factory
             'title' => $this->faker->sentence(mt_rand(2,8)),
             'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->sentence(10),
-            'body' => $this->faker->paragraph(100),
+
+            'body' => collect($this->faker->paragraphs(mt_rand(5,10)))
+            ->map(fn($p) => "<p>$p</p>")
+            ->implode(''),
             'user_id' => mt_rand(1,5),
             'created_at' => $this->faker->time('H:i:s','now'),
             'divisi_id' => mt_rand(1,5),

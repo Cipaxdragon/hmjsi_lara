@@ -13,16 +13,17 @@
                     <a class="nav-link active" style="color: inherit" href="/">Beranda</a>
                 </li>
                 <li class="nav-item nav-item-animasi">
-                    <a class="nav-link  " style="color: inherit" href="/kegiatan">Informasi</a>
+                    <a class="nav-link" style="color: inherit" href="/kegiatan">Informasi</a>
                 </li>
                 <li class="nav-item nav-item-animasi">
-                    <a class="nav-link " style="color: inherit" href="/pengurus">Pengurus</a>
+                    <a class="nav-link" style="color: inherit" href="/pengurus">Pengurus</a>
                 </li>
                 <li class="nav-item nav-item-animasi">
-                    <a class="nav-link " style="color: inherit" href="/tentang">Tentang</a>
+                    <a class="nav-link" style="color: inherit" href="/tentang">Tentang</a>
                 </li>
+
                 <li class="nav-item dropdown nav-item-animasi">
-                    <a class="nav-link " href="#" role="button" style="color: inherit" data-bs-toggle="dropdown"
+                    <a class="nav-link" href="#" role="button" style="color: inherit" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Lainnya
                         <div class="d-inline">
@@ -40,6 +41,32 @@
                         <li><a class="dropdown-item" style="color: inherit" href="#">Kritik dan Saran</a></li>
                     </ul>
                 </li>
+
+                @auth
+                    <!-- Selamat Datang dan Dropdown Logout -->
+                    <li class="nav-item dropdown nav-item-animasi">
+                        <a class="nav-link" href="/dashboard" role="button" style="color: inherit" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Hai Admin {{ auth()->user()->name }}
+                            <div class="d-inline">
+                                <svg class="d-inline" width="14" xmlns="http://www.w3.org/2000/svg"
+                                    :class="{ 'rotate-180': expanded }" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </div>
+                        </a>
+                        <ul class="dropdown-menu nav-item-animasi">
+                            <li><a class="dropdown-item" style="color: inherit" href="/dashboard">Dashboard</a></li>
+
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button type="submit" class="dropdown-item" style="color: inherit" > Logout</button>
+                            </form>
+                        </ul>
+                    </li>
+                @endauth
             </ul>
         </div>
     </div>

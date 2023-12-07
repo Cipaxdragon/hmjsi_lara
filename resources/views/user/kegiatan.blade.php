@@ -116,7 +116,7 @@
                            <a href="kegiatan/{{$item->slug}}">
                               <h5 class="card-title">{{ $item->nama }}</h5>
                            </a>
-                           <p class="card-text">{{ $item->body_text }}
+                           <p class="card-text">{{  $item->excerpt }}
                            </p>
                            <a href="kegiatan/{!! $item->slug !!}" class="">Baca
                            selengkapnya</a>

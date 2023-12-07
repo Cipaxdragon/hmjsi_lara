@@ -21,11 +21,22 @@ class LoginController extends Controller
 
         if(Auth::attempt($credensials)){
             $request->session()->regenerate();
-            return redirect()->intended('/dasboard');
+            return redirect()->intended('/dashboard');
         }
 
         return back()->with('loginError','Login Gagal bos');
 
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 
 }

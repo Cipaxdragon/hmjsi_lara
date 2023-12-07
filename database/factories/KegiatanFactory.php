@@ -17,7 +17,9 @@ class KegiatanFactory extends Factory
             'nama' => $this->faker->sentence,
             'slug' => $this->faker->slug(),
             'excerpt' => $this->faker->sentence,
-            'body_text' => $this->faker->paragraph,
+            'body_text' => collect($this->faker->paragraphs(mt_rand(5,10)))
+            ->map(fn($p) => "<p>$p</p>")
+            ->implode(''),
             'divisi_id' => $this->faker->numberBetween(1, 5),
             'tanggal' => $this->faker->dateTime(),
             'gambar' => $this->faker->imageUrl(),

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\PostController;
@@ -14,12 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class,'beranda']);
 Route::get('/beranda', [PostController::class,'beranda']);
-Route::get('/login', [LoginController::class,'index']);
+Route::get('/login', [LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class,'autenticate']);
+Route::post('/logout', [LoginController::class,'logout']);
 Route::get('/register', [RegisterController::class,'index']);
 Route::post('/register', [RegisterController::class,'store']);
-
-Route::get('/dashboard', [RegisterController::class,'index']);
+Route::get('/dashboard', [DashboardController::class,'index'])->middleware('auth');
 
 
 //about
@@ -50,5 +51,5 @@ Route::fallback(function () {
 
 
 Route::get('/kategori/{divisi:slug}', [PostController::class, 'sortDivisi']);
-Route::get('/{post:slug}', [PostController::class,'show']);
+Route::get('/postingan/{post:slug}', [PostController::class,'show']);
 
