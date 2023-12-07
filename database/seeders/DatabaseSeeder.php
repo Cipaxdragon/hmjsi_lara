@@ -20,7 +20,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\User::factory(5)->create();
+        // \App\Models\User::factory(5)->create();
+        User::create([
+            'name' => 'Adam',
+            'email' => 'dani',
+            'username' => 'dono',
+            'password' => "dani123",
+        ]);
         Pengurus::create([
             'nama' => 'Adam',
             'divisi_id' => 2,

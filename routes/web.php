@@ -3,6 +3,7 @@
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
 use App\Models\Category;
 use App\Models\Kegiatan;
 use App\Models\Post;
@@ -13,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class,'beranda']);
 Route::get('/beranda', [PostController::class,'beranda']);
-Route::get('/admin', [LoginController::class,'index']);
+Route::get('/login', [LoginController::class,'index']);
+Route::post('/login', [LoginController::class,'autenticate']);
+Route::get('/register', [RegisterController::class,'index']);
+Route::post('/register', [RegisterController::class,'store']);
 
-
+Route::get('/dashboard', [RegisterController::class,'index']);
 
 
 //about

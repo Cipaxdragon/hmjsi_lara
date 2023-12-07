@@ -35,25 +35,54 @@
             <div class="login-icon">
                 <img src="https://cdn.discordapp.com/attachments/1152085105641279519/1178314168961597520/LOGO_SI.png?ex=6575b195&amp;is=65633c95&amp;hm=caef25a36e2040c0cee7fb70399dd710c55234541efbc5de523029d0136af56f&amp;" alt="Logo">
             </div>
-            <form>
+            <form action="/register" method="POST">
+                @csrf
                 <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
 
                 <div class="form-floating mb-1">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                  <label for="floatingInput">Username</label>
+                  <input type="text" class="form-control  @error('name') is-invalid @enderror " autocomplete="off" id="floatingInput" name="name"  placeholder="name@example.com" value="{{ old('name') }}">
+                  <label for="floatingInput">nama</label>
+                  @error('name')
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                   {{ $message }}
+                  </div>
+                  @enderror
                 </div>
-                <div class="form-floating">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                  <label for="floatingPassword">Password</label>
+                <div class="form-floating mb-1">
+                  <input type="text" class="form-control @error('username') is-invalid @enderror  " autocomplete="off"   id="floatingInput" name="username" placeholder="name@example.com" value="{{ old('username') }}">
+                  <label for="floatingInput">Username</label>
+                  @error('username')
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                   {{ $message }}
+                  </div>
+                  @enderror
+                </div>
+                <div class="form-floating mb-1">
+                  <input type="email" class="form-control @error('email') is-invalid @enderror " autocomplete="off"  id="floatingInput" name="email" placeholder="name@example.com" value="{{ old('email') }}" >
+                  <label for="floatingInput">Email</label>
+                  @error('email')
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                   {{ $message }}
+                  </div>
+                  @enderror
                 </div>
 
+                <div class="form-floating">
+                  <input type="password" class="form-control @error('password') is-invalid @enderror " autocomplete="off"  name="password" id="floatingPassword" placeholder="Password" value="{{ old('password') }}">
+                  <label for="floatingPassword">Password</label>
+                  @error('password')
+                  <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                   {{ $message }}
+                  </div>
+                  @enderror
+                </div>
                 <div class="form-check text-start ">
                   <!-- {{-- <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault"> --}}
                   {{-- <label class="form-check-label" for="flexCheckDefault">
                     Remember me
                   </label> --}} -->
                 </div>
-                <button class="btn btn-primary w-100 py-2" type="submit">LOGIN</button>
+                <button class="btn btn-primary w-100 py-2" name="submit" type="submit">LOGIN</button>
               </form>
         </div>
     </div>
