@@ -23,9 +23,21 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/info-penting*') ?'active' : '' }}" href="#">
+                    <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/pengurus*') ?'active' : '' }}" href="#">
                     <i class="bi   {{ Request::is('dashboard/info-penting*') ?'bi-info-square-fill' : 'bi-info-square' }}"></i>
                         info-penting
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/halaman*') ?'active' : '' }}" href="#">
+                    <i class="bi  bi-page  {{ Request::is('dashboard/halaman*') ?'bi-info-square-fill' : 'bi-info-square' }}"></i>
+                        Halaman
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/pengurus*') ?'active' : '' }}" href="#">
+                    <i class="bi   {{ Request::is('dashboard/pengurus*') ?'bi-people-fill' : 'bi-people' }}"></i>
+                        pengurus
                     </a>
                 </li>
                 <li class="nav-item disabled">

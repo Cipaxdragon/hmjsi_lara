@@ -18,9 +18,9 @@ class CreateKegiatansTable extends Migration
             $table->string('nama');
             $table->string('slug');
             $table->text('body_text');
-            $table->dateTime('tanggal');
+            $table->date('tanggal');
             $table->text('excerpt')->nullable();
-            $table->string('gambar')->nullable();
+            $table->text('gambar')->nullable();
             $table->foreignId('galery_id')->nullable();
             $table->foreignId('divisi_id')->nullable();
             $table->foreignId('user_id')->nullable();

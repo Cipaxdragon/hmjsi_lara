@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\divisi;
+use App\Models\Galery;
 use App\Models\Kegiatan;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
@@ -33,7 +34,8 @@ class DashboardKegiatanController extends Controller
     public function create()
     {
         return view('admin.kegiatan.create',[
-            'divisi' => divisi::all()
+            'divisi' => divisi::all(),
+            'galery' => Galery::all()
         ]);
     }
 
@@ -49,9 +51,10 @@ class DashboardKegiatanController extends Controller
             'nama' => ['required','max:255'],
             'slug' => ['required','unique:kegiatans'],
             'divisi_id' => ['required'],
+            'galery_id' => ['nullable'],
+            'galery_id' => ['nullable'],
             'body_text' => ['required'],
             'tanggal' => ['required']
-
         ]);
 
         $validatedData['excerpt'] = Str::limit( strip_tags($request->body_text) , 200 );

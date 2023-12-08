@@ -22,11 +22,12 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(5)->create();
         User::create([
-            'name' => 'Adam',
-            'email' => 'dani',
-            'username' => 'dono',
-            'password' => "dani123",
+            'name' => 'Ghazali',
+            'email' => '60900121064@uin-alauddin.ac.id',
+            'username' => 'ghazali',
+            'password' => '$2y$10$voAm/wCaKTE7GbxZKxczIumSygl81JrQMFCw0Pzgwt/flAoVFypVG',
         ]);
+
         Pengurus::create([
             'nama' => 'Adam',
             'divisi_id' => 2,

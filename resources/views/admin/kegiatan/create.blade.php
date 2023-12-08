@@ -37,11 +37,31 @@
                             @endforeach
                         </select>
                     </div>
+                    {{-- <div class="mb-3">
+                        <label for="gambar" class="form-label">Gambar</label>
+                        <input type="text" class="form-control @error('gambar') is-invalid @enderror " id="gambar"
+                            name="gambar" autofocus autocomplete="off" value="{{ old('name') }}" required>
+                        @error('gambar')
+                            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <div class="form-text">link gambar mo biar nda na sessai server</div>
+                    </div> --}}
+                    <div class="mb-3">
+                        <label for="slug" class="form-label">Punya Galery?</label>
+                        <select class="form-select" name="galery_id"  >
+                            <option value="">tidak ada </option>
+                            @foreach ($galery as $item)
+                                <option value="{{ $item->id }}">{{ $item->kegiatan->nama }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal Kegiatan</label>
                         <input type="date" class="form-control" id="tanggal" name="tanggal"
                             value="{{ old('tanggal') }}" required>
-
                     </div>
 
                 </div>

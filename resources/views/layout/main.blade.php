@@ -14,6 +14,7 @@
         rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Selamat datang di website resmi Himpunan Mahasiswa Jurusan Sistem Informasi Fakultas Sains dan Teknologi, Universitas Negeri Alauddin Makassar. Kami adalah wadah bagi para mahasiswa yang memiliki minat dan kecintaan terhadap teknologi informasi. Temukan informasi terbaru mengenai kegiatan, acara, dan prestasi kami di sini. Saksikan dedikasi kami dalam mengembangkan potensi mahasiswa serta mendukung pertumbuhan dan inovasi di bidang sistem informasi. Bergabunglah dengan kami untuk merasakan atmosfer kolaboratif dan progresif di komunitas kami. Jelajahi lebih lanjut untuk mengetahui peran kami dalam membentuk generasi penerus yang unggul di dunia teknologi. Terima kasih atas kunjungan Anda!">
     <title>{{{$title}}}</title>
     <link rel="shortcut icon"
         href="https://cdn.discordapp.com/attachments/1152085105641279519/1178314168961597520/LOGO_SI.png?ex=6575b195&amp;is=65633c95&amp;hm=caef25a36e2040c0cee7fb70399dd710c55234541efbc5de523029d0136af56f&amp;"
