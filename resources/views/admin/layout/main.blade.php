@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.118.2">
-        <title>Dashboard SI</title>
+        <title>Dashboard </title>
         <link rel="stylesheet" href="..\..\admin\dashboard.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
         <link href="..\..\boostrap\css\bootstrap.css" rel="stylesheet">
