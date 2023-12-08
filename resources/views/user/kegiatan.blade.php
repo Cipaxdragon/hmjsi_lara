@@ -52,6 +52,11 @@
       <h1 class="my-3 text-center text-lg-start" id="head">Daftar Kegiatan</h1>
       <!-- //daftar Postingan -->
       <!-- Di halamaman Desktop -->
+      @if (session()->has('success'))
+      <div class="alert alert-success" role="alert">
+          {{ session('success') }}
+      </div>
+  @endif
       <form action="/kegiatan">
          <div class="input-group mb-3">
             @if (request('divisi'))

@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.118.2">
-        <title>Dashboard Template · Bootstrap v5.3</title>
+        <title>Dashboard SI</title>
         <link rel="stylesheet" href="..\..\admin\dashboard.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
         <link href="..\..\boostrap\css\bootstrap.css" rel="stylesheet">
@@ -17,6 +17,20 @@
         href="https://cdn.discordapp.com/attachments/1152085105641279519/1178314168961597520/LOGO_SI.png?ex=6575b195&amp;is=65633c95&amp;hm=caef25a36e2040c0cee7fb70399dd710c55234541efbc5de523029d0136af56f&amp;"
         type="image/x-icon">
         <style>
+
+::-webkit-scrollbar {
+    display: fixed;
+    background-color: white;
+    width: 7px;
+ }
+ ::-webkit-scrollbar-thumb {
+    background: rgb(196, 196, 196);
+    border-radius: 50px;
+ }
+ ::-webkit-scrollbar-thumb:hover {
+    background: #1245ba;
+ }
+
 trix-toolbar [data-trix-button-group="file-tools"] {
     display: none;
 }

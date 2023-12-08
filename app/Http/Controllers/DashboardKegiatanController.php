@@ -6,6 +6,9 @@ use App\Models\divisi;
 use App\Models\Kegiatan;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+// use App\Http\Controllers\Str;
+use Illuminate\Support\Str;
+
 use Symfony\Component\HttpFoundation\Test\Constraint\ResponseFormatSame;
 
 class DashboardKegiatanController extends Controller
@@ -18,7 +21,7 @@ class DashboardKegiatanController extends Controller
     public function index()
     {
         return view('admin.kegiatan.index',[
-            'kegiatan' => Kegiatan::all()
+            'kegiatan' => Kegiatan::latest('tanggal')->get()
         ]);
     }
 
@@ -42,8 +45,22 @@ class DashboardKegiatanController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
+        $validatedData = $request->validate([
+            'nama' => ['required','max:255'],
+            'slug' => ['required','unique:kegiatans'],
+            'divisi_id' => ['required'],
+            'body_text' => ['required'],
+            'tanggal' => ['required']
+
+        ]);
+
+        $validatedData['excerpt'] = Str::limit( strip_tags($request->body_text) , 200 );
+
+        Kegiatan::create($validatedData);
+
+        return redirect('/dashboard/kegiatan')->with('success', 'Data Kegiatan Berhasil di tambahkan bos!!!');
     }
+
 
     /**
      * Display the specified resource.
