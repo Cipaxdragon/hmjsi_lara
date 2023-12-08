@@ -26,6 +26,7 @@ Route::get('/dashboard', function (){
     return view('admin.dashboard');}
     )->middleware('auth');
 
+Route::get('dashboard/kegiatan/checkSlug', [DashboardKegiatanController::class,'checkSlug']);
 Route::resource('/dashboard/kegiatan', DashboardKegiatanController::class)->middleware(['auth']);
 // Route::resource('/dashboard/kegiatan', DashboardKegiatanController::class,'index');
 

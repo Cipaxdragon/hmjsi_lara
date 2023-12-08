@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\divisi;
 use App\Models\Kegiatan;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Test\Constraint\ResponseFormatSame;
 
 class DashboardKegiatanController extends Controller
 {
@@ -27,6 +30,7 @@ class DashboardKegiatanController extends Controller
     public function create()
     {
         return view('admin.kegiatan.create',[
+            'divisi' => divisi::all()
         ]);
     }
 
@@ -38,7 +42,7 @@ class DashboardKegiatanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
@@ -86,5 +90,10 @@ class DashboardKegiatanController extends Controller
     public function destroy(Kegiatan $kegiatan)
     {
         //
+    }
+
+    public function checkSlug(Request $request){
+        $slug = SlugService::createSlug(Kegiatan::class, 'slug', $request->nama);
+        return response()->json(['slug'=> $slug]);
     }
 }

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" data-bs-theme="auto">
     <head>
+            <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
         <script src="../assets/js/color-modes.js"></script>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.14.0/font/bootstrap-icons.css">
@@ -12,7 +13,14 @@
         <link rel="stylesheet" href="..\..\admin\dashboard.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
         <link href="..\..\boostrap\css\bootstrap.css" rel="stylesheet">
+        <link rel="shortcut icon"
+        href="https://cdn.discordapp.com/attachments/1152085105641279519/1178314168961597520/LOGO_SI.png?ex=6575b195&amp;is=65633c95&amp;hm=caef25a36e2040c0cee7fb70399dd710c55234541efbc5de523029d0136af56f&amp;"
+        type="image/x-icon">
         <style>
+trix-toolbar [data-trix-button-group="file-tools"] {
+    display: none;
+}
+
             .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -167,5 +175,7 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"
             integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script>
         <script src="..\..\admin\dashboard.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+
     </body>
 </html>
