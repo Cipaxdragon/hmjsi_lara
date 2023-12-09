@@ -64,7 +64,7 @@ class DashboardKegiatanController extends Controller
     }
 
     // Menggunakan fungsi Str::limit untuk membuat excerpt dari body_text dengan batasan 200 karakter
-    $validatedData['excerpt'] = Str::limit(strip_tags($request->body_text), 200);
+    $validatedData['excerpt'] = Str::limit(strip_tags($request->body_text), 200,'...');
 
     // Membuat entitas Kegiatan baru dengan menggunakan metode create dari model Kegiatan
     Kegiatan::create($validatedData);

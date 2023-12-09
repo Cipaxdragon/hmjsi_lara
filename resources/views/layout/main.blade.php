@@ -41,6 +41,30 @@
     <script src="js/main.js"></script>
     <script src="..\boostrap\js\bootstrap.bundle.js"></script>
 
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    var navbar = document.querySelector('.navbar');
+
+    // Fungsi untuk menangani perubahan kelas navbar saat menggulir
+    function handleScroll() {
+        var scrollPosition = window.scrollY;
+
+        // Tentukan nilai batas scroll untuk perubahan kelas
+        var scrollThreshold = 300;
+
+        // Tambah atau hapus kelas 'bg-white' dan 'shadow' berdasarkan posisi scroll
+        if (scrollPosition > scrollThreshold) {
+            navbar.classList.add('bg-white', 'shadow');
+        } else {
+            navbar.classList.remove('bg-white', 'shadow');
+        }
+    }
+
+    // Tambahkan event listener untuk peristiwa scroll
+    window.addEventListener('scroll', handleScroll);
+});
+
+    </script>
 </body>
 
 </html>

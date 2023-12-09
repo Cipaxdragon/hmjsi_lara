@@ -1,4 +1,5 @@
-<nav class="navbar navbar-expand-lg p-2 fw-normal px-3 p-3 md-1 fixed-top rounded-bottom-3">
+{{-- <nav class="navbar  navbar-expand-lg p-2   fw-normal{{ $title === 'HMJ-SI' ? ' bg-transparent fixed-top ':' bg-white shadow fixed-top '}}px-3 p-3  " id="navbar"> --}}
+<nav class="navbar  navbar-expand-lg p-2   fw-normal fixed-top px-3 p-3  " id="navbar">
     <div class="container">
         <img class="img-fluid"
             src="https://cdn.discordapp.com/attachments/1152085105641279519/1178314168961597520/LOGO_SI.png?ex=6575b195&amp;is=65633c95&amp;hm=caef25a36e2040c0cee7fb70399dd710c55234541efbc5de523029d0136af56f&amp;"
@@ -35,7 +36,7 @@
                             </svg>
                         </div>
                     </a>
-                    <ul class="dropdown-menu nav-item-animasi">
+                    <ul class="dropdown-menu nav-item-animasi overflow-hidden">
                         <li><a class="dropdown-item" style="color: inherit" href="#">Arsip</a></li>
                         <li><a class="dropdown-item" style="color: inherit" href="#">Galery</a></li>
                         <li><a class="dropdown-item" style="color: inherit" href="#">Kritik dan Saran</a></li>
@@ -44,7 +45,7 @@
 
                 @auth
                     <!-- Selamat Datang dan Dropdown Logout -->
-                    <li class="nav-item dropdown nav-item-animasi">
+                    <li class="nav-item dropdown nav-item-animasi ">
                         <a class="nav-link" href="/dashboard" role="button" style="color: inherit" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Hai Admin {{ auth()->user()->name }}
@@ -57,7 +58,7 @@
                                 </svg>
                             </div>
                         </a>
-                        <ul class="dropdown-menu nav-item-animasi">
+                        <ul class="dropdown-menu nav-item-animasi overflow-hidden">
                             <li><a class="dropdown-item" style="color: inherit" href="/dashboard">Dashboard</a></li>
 
                             <form action="/logout" method="POST">

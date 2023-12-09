@@ -107,11 +107,11 @@
                   </div>
                   <div class="col-lg-4 mb-1">
                      <div class="container ">
-                        <div style="width: 318px;height: 218px;" class="overflow-hidden d-flex justify-content-center align-items-center">
+                        <div style="width: 318px;height: 218px;" class="overflow-hidden d-flex justify-content-center align-items-start rounded rounded-4">
                         @if ($item->isImageURL($item->gambar))
-                            <img src="{{ $item->gambar }}" class="w-100 object-fit-cover" alt="">
+                            <img src="{{ $item->gambar }}" class="w-100 object-fit-cover rounded rounded-4" alt="">
                         @else
-                            <img src="{{ asset('storage/'.$item->gambar) }}" class="w-100 object-fit-cover" alt="">
+                            <img src="{{ asset('storage/'.$item->gambar) }}" class="w-100 object-fit-cover rounded rounded-4" alt="">
                         @endif
                         </div>
                      </div>
@@ -166,11 +166,12 @@
                <!-- Kegiatan 1 -->
                <div class="col-md-4">
                   <div class="card mb-4 shadow-sm">
+                    @if ($item->isImageURL($item->gambar))
+                    <img src="{{ $item->gambar }}" class="card-img-top" alt="">
+                @else
+                    <img src="{{ asset('storage/'.$item->gambar) }}" class="card-img-top" alt="">
+                @endif
 
-                     <img src="https://source.unsplash.com/368x207?together" class="card-img-top"
-                        alt="Kegiatan 1">
-                        <img src="https://source.unsplash.com/368x207?together" class="card-img-top"
-                        alt="Kegiatan 1">
                      <div class="card-body">
                         <p class="card-text"><small class="text-muted">  <a href="/kegiatan?divisi={{ $item->divisi->slug }}#head">
                             {{ $item->divisi->nama }}
@@ -178,10 +179,9 @@
                         <a href="kegiatan/{{$item->slug}}">
                             <h5 class="card-title">{{ $item->nama }}</h5>
                          </a>
-                         <p class="card-text">{{ $item->body_text }}
+                         <p class="card-text">{{ $item->excerpt }}
                         </p>
                         <p class="card-text"><small class="text-muted">{{ $item->tanggal($item->tanggal) }}</small></p>
-
                      </div>
                   </div>
                </div>
