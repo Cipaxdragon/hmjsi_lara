@@ -80,11 +80,16 @@
         <div class="row ">
             @foreach ($post as $item)
             <div class="col-lg-3 col mb-4 animated-element" >
+                <a href="/kegiatan/{{$item->slug}}">
                 <div class="container d-flex justify-content-center align-items-center ">
-                    <div class="card shadow overflow-hidden " style="width: 18rem; ">
-                        <div class="overflow-hidden" style="width: 100%;">
-                            <img class="object-fit-cover img-fluid " src="https://source.unsplash.com/300x158?white"
-                                alt="Card image cap">
+                    <div class="card shadow overflow-hidden hover-scale  " style="width: 18rem; ">
+                        <div class="overflow-hidden" style="width: 300px; height:128px">
+                            @if ($item->isImageURL($item->gambar))
+                            <img class="object-fit-cover  w-100 " src="{{ $item->gambar}}" alt="Card image cap">
+                            @else
+                            <img class="object-fit-cover img-fluid " src="{{asset('storage/'. $item->gambar)}}" alt="Card image cap">
+                        @endif
+
                         </div>
                         <div class="card-body overflow-hidden ">
                             <a href="" class="badge bg-secondary text-white  fw-light">{{$item->divisi->nama}}</a>
@@ -93,11 +98,14 @@
                                     {{$item->batasi($item->nama)}}
                                 </a>
                             </h5>
-                            <h6 class="card-subtitle mb-2 text-muted fw-light fs-6">{{$item->created_at->diffForHumans()}} </h6>
+                            <h6 class="card-subtitle mb-2 text-muted fw-light fs-6">{{ \Carbon\Carbon::parse($item->tanggal)->diffForHumans() }}
+                            </h6>
                         </div>
                     </div>
                 </div>
+            </a>
             </div>
+
             @endforeach
         </div>
         <div class="row mt-5">
