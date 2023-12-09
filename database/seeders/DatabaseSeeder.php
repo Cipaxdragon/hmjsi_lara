@@ -315,8 +315,8 @@ class DatabaseSeeder extends Seeder
 
 
         Post::factory(20)->create();
-        Kegiatan::factory(1)->create();
-        // Galery::factory(20)->create();
+        Kegiatan::factory(100)->create();
+        Galery::factory(20)->create();
         // Pengurus::factory(20)->create();
 
         // Post::create([

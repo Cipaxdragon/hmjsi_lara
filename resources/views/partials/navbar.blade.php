@@ -36,6 +36,11 @@
                             </svg>
                         </div>
                     </a>
+                    <style>
+                        .dropdown-item:active{
+                            background-color: rgb(228, 228, 228);
+                        }
+                    </style>
                     <ul class="dropdown-menu nav-item-animasi overflow-hidden">
                         <li><a class="dropdown-item" style="color: inherit" href="#">Arsip</a></li>
                         <li><a class="dropdown-item" style="color: inherit" href="#">Galery</a></li>

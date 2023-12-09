@@ -24,7 +24,7 @@ class DashboardKegiatanController extends Controller
     public function index()
     {
         return view('admin.kegiatan.index', [
-            'kegiatan' => Kegiatan::latest('tanggal')->get()
+            'kegiatan' => Kegiatan::latest('tanggal')->paginate(10)
         ]);
     }
 

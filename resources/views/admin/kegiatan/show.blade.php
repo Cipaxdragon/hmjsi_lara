@@ -38,6 +38,7 @@
 
             <!-- Body Text -->
             <p> {!! $kegiatan->body_text !!}</p>
+            
 
         </div>
 

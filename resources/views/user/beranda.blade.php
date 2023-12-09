@@ -295,12 +295,18 @@
             </div>
         </div>
 </section>
-<section class="mb-0">
+<section class="mb-0" id="kritik">
     <div class="container mt-5 px-5">
         <h3 class=" fw-bold mx-auto text-center mx-lg-0 mb-5">Berikan Kritik dan Saran</h3>
         <div class="row">
             <div class="col-lg-6  offset-lg-3">
-                <form action="/beranda">
+                @if (session()->has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
+                <form action="/beranda/kritik" method="POST">
+                    @csrf
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama:</label>
                         <input type="text" autocomplete="off" class="form-control" id="nama" name="nama" required>
@@ -312,7 +318,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="kritik" class="form-label">Kritik atau Saran:</label>
-                        <textarea autocomplete="off" class="form-control" id="kritik" name="kritik" rows="4" required></textarea>
+                        <textarea autocomplete="off" class="form-control" id="kritik" name="teks" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Kirim</button>
                 </form>

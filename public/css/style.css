@@ -26,7 +26,9 @@ body{
     /* background-image: url('https://source.unsplash.com/1600x7?white'); */
     background-position: center;
 }
-
+.dropdown-item:active{
+    background-color: red;
+}
 .container-fluid{
     padding-right: 0px;
     padding-left: 0px;
