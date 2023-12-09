@@ -280,8 +280,8 @@ class DatabaseSeeder extends Seeder
         Galery::create([
             'link' => 'https://cdn.discordapp.com/attachments/1152085105641279519/1180512142340923513/DSC09925.JPG?ex=657db09b&is=656b3b9b&hm=80317ca7f5e87b3c3e8429e38307e602ed99f917f3578fbbd3812f4d14182b95&',
             'kegiatan_id' => '1',
+            'nama' => 'halis Jabat tangan ',
         ]);
-
 
         divisi::create([
             'nama' => 'Keilmuan',
@@ -315,8 +315,8 @@ class DatabaseSeeder extends Seeder
 
 
         Post::factory(20)->create();
-        Kegiatan::factory(20)->create();
-        Galery::factory(20)->create();
+        Kegiatan::factory(1)->create();
+        // Galery::factory(20)->create();
         // Pengurus::factory(20)->create();
 
         // Post::create([

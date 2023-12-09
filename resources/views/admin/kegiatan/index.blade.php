@@ -1,9 +1,15 @@
 @extends('admin.layout.main')
 
 @section('container')
+
     <div class="container mt-2">
         <h1 class="h2">Kegiatan </h1>
         <a href="/dashboard/kegiatan/create" class="btn btn-sm  btn-primary my-2">Tambahkan Kegiatan</a>
+        @if (session()->has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
         <div class="table-responsive small ">
             <table class="table table-striped table-sm">
                 <thead>
@@ -40,13 +46,17 @@
                                 @endif
                             </td>
                             <td>{{ $item->tanggal }}</td>
-                            <td>
+                            <td class="text-nowrap">
                                 <a href="/dashboard/kegiatan/{{ $item->slug }}" class="badge bg-primary"><i
                                         class="bi bi-eye"></i></a>
-                                <a href="/dashboard/kegiatan/{{ $item->slug }}" class="badge bg-warning"><i
+                                <a href="/dashboard/kegiatan/{{ $item->slug }}/edit" class="badge bg-warning"><i
                                         class="bi bi-pencil"></i></a>
-                                <a href="/dashboard/kegiatan/{{ $item->slug }}" class="badge bg-danger"><i
-                                        class="bi bi-trash"></i></a>
+                                <form action="/dashboard/kegiatan/{{ $item->slug}}" method="POST" class="d-inline">
+                                    @method('delete')
+                                    @csrf
+                                    <button class="badge bg-danger border-0 " onclick="return confirm('seriusko moko hapus ki?') " ><i class="bi bi-trash"></i></button>
+                                </form>
+
                             </td>
                         </tr>
                     @endforeach

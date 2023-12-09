@@ -1,16 +1,17 @@
 @extends('admin.layout.main')
-
 @section('container')
     <div class="container mt-2">
         <h1 class="h2">Buat Data Kegiatan Baru </h1>
-        <form action="/dashboard/kegiatan/" method="POST" enctype="multipart/form-data">
+        <form action="/dashboard/kegiatan/{{ $kegiatan->slug }}" method="POST">
+            @method('put')
             <div class="row">
                 <div class="col-lg-4">
                     @csrf
                     <div class="mb-3">
-                        <label for="nama" class="form-label">Nama Kegiatan</label>
+                        <label for="nama" class="form-label">Edit Nama Kegiatan</label>
                         <input type="text" class="form-control @error('nama') is-invalid @enderror " id="nama"
-                            name="nama" autofocus autocomplete="off" value="{{ old('name') }}" required>
+                            name="nama" autofocus autocomplete="off" value="{{ old('nama') ?? $kegiatan->nama }}"
+                            required>
                         @error('nama')
                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                 {{ $message }}
@@ -21,7 +22,7 @@
                     <div class="mb-3">
                         <label for="slug" class="form-label">Slug</label>
                         <input type="text" class="form-control disabled @error('slug') is-invalid @enderror"
-                            id="slug" name="slug" readonly>
+                            id="slug" name="slug" value="{{ old('slug') ?? $kegiatan->slug }}" readonly>
                         @error('slug')
                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                 {{ $message }}
@@ -32,49 +33,52 @@
                         <label for="slug" class="form-label">Divisi</label>
                         <select class="form-select" name="divisi_id">
                             {{-- <option selected>Open this select menu</option> --}}
+
                             @foreach ($divisi as $item)
-                                <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                @if ($kegiatan->divisi_id === $item->id)
+                                    <option value="{{ $item->id }}" selected="{{ $kegiatan->divisi_id }}">
+                                        {{ $item->nama }}</option>
+                                @else
+                                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                @endif
                             @endforeach
                         </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="gambar" class="form-label">image</label>
-                        <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" required value="{{ old('gambar') }}">
+                    {{-- <div class="mb-3">
+                        <label for="gambar" class="form-label">Gambar</label>
+                        <input type="text" class="form-control @error('gambar') is-invalid @enderror " id="gambar"
+                            name="gambar" autofocus autocomplete="off" value="{{ old('name') }}" required>
                         @error('gambar')
-                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                      </div>
+                            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <div class="form-text">link gambar mo biar nda na sessai server</div>
+                    </div> --}}
                     <div class="mb-3">
                         <label for="slug" class="form-label">Punya Galery?</label>
-                        <select class="form-select" name="galery_id"  >
+                        <select class="form-select" name="galery_id">
                             <option value="">tidak ada </option>
                             @foreach ($galery as $item)
-                            {{-- Memeriksa apakah properti 'nama' pada $item sama dengan null --}}
-                            @if ($item->nama === null)
-                                {{-- Memeriksa apakah properti 'nama' pada $item->kegiatan tidak sama dengan null --}}
                                 @if ($item->kegiatan->nama !== null)
-                                    {{-- Menampilkan opsi (option) dengan nilai dan teks yang sesuai --}}
-                                    <option value="{{ $item->id }}"> Galery {{ $item->kegiatan->nama}}</option>
+                                    <option value="{{ $item->id }}"> Galery {{ $item->kegiatan->nama }}</option>
                                 @endif
-                            @endif
-                        @endforeach
-
+                            @endforeach
                         </select>
                     </div>
 
                     <div class="mb-3">
                         <label for="tanggal" class="form-label">Tanggal Kegiatan</label>
                         <input type="date" class="form-control" id="tanggal" name="tanggal"
-                            value="{{ old('tanggal') }}" required>
+                            value="{{ old('tanggal') ?? $kegiatan->tanggal }}" required>
                     </div>
 
                 </div>
                 <div class="col-lg-8">
                     <div class="mb-3">
                         <label for="body_text" class="form-label">Teks</label>
-                        <input id="body_text" type="hidden" name="body_text" value="{{ old('body_text') }}">
+                        <input id="body_text" type="hidden" name="body_text"
+                            value="{{ old('body_text') ?? $kegiatan->body_text }}">
                         @error('body_text')
                             <p class="text-danger">
                                 Harus di isi ini text kodong
@@ -85,7 +89,7 @@
                         <div class="form-text">Kasih rapihki caramu menulis pakai tanda baca yang benar dan gunakan paragraf
                             dan huruf tebal cuk</div>
                     </div>
-                    <button type="submit" class="btn btn-sm btn-primary">Gaskan</button>
+                    <button type="submit" class="btn btn-sm btn-primary">Gaskan Edit</button>
 
                 </div>
 

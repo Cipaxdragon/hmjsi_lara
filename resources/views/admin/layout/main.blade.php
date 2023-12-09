@@ -10,9 +10,9 @@
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.118.2">
         <title>Dashboard </title>
-        <link rel="stylesheet" href="..\..\admin\dashboard.css">
+        <link rel="stylesheet" href="{{ asset('admin/dashboard.css') }}">
+        <link rel="stylesheet" href="{{ asset('boostrap/css/bootstrap.css') }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-        <link href="..\..\boostrap\css\bootstrap.css" rel="stylesheet">
         <link rel="shortcut icon"
         href="https://cdn.discordapp.com/attachments/1152085105641279519/1178314168961597520/LOGO_SI.png?ex=6575b195&amp;is=65633c95&amp;hm=caef25a36e2040c0cee7fb70399dd710c55234541efbc5de523029d0136af56f&amp;"
         type="image/x-icon">
@@ -185,10 +185,10 @@ trix-toolbar [data-trix-button-group="file-tools"] {
                 </main>
             </div>
         </div>
-        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('boostrap/js/bootstrap.bundle.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js"
             integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script>
-        <script src="..\..\admin\dashboard.js"></script>
+        <script src="{{ asset('admin/dashboard.js') }}"></script>
         <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 
     </body>

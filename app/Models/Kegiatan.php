@@ -79,4 +79,13 @@ class Kegiatan extends Model
         ];
     }
 
+    public function isImageURL($url) {
+        $urlLower = strtolower($url); // Ubah ke huruf kecil untuk memastikan case-insensitive
+        if (strpos($urlLower, 'https://') === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

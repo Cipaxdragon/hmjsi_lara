@@ -71,7 +71,7 @@ class PostController extends Controller
 
     public function show(Post $post){
         $randomData = Post::inRandomOrder()->take(3)->get(); // Mengambil 5 data secara acak
-        return view('user/postingan',[
+        return view('user/`postingan`',[
             "title" => $post->title,
             "post" => $post,
             "recent" => $randomData,

@@ -17,8 +17,12 @@
                 <h1 class="mb-4">{{ $post->nama }}</h1>
                 <!-- Single Post Title -->
 
-                <div class="overflow-hidden mb-4 d-flex align-items-center" style="height: 400px;">
+                <div class="overflow-hidden mb-4 " style="height: 400px;">
+                    @if ($post->isImageURL($post->gambar))
                     <img src="{{ $post->gambar }}" alt="Gambar Post" class="img-fluid mb-4 w-100 object-fit-cover" >
+                @else
+                    <img src="{{ asset('storage/'.$post->gambar) }}" alt="Gambar Post" class="img-fluid mb-4 w-100 object-fit-cover" >
+                @endif
                 </div>
 
 

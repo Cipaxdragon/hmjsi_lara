@@ -19,9 +19,14 @@
             </div>
 
             <div class="">
-                <a href="/dashboard/kegiatan/" class="badge bg-primary"><i class="bi bi-arrow-left"></i> </a>
-                <a href="/dashboard/kegiatan/{{ $kegiatan->slug }}" class="badge bg-warning"><i class="bi bi-pencil"></i></a>
-                <a href="/dashboard/kegiatan/{{ $kegiatan->slug }}" class="badge bg-danger"><i class="bi bi-trash"></i></a>
+                <a href="/dashboard/kegiatan/{{ $kegiatan->slug }}" class="badge bg-primary"><i
+                    class="bi bi-eye"></i></a>
+                <a href="/dashboard/kegiatan/{{ $kegiatan->slug }}/edit" class="badge bg-warning"><i class="bi bi-pencil"></i></a>
+                <form action="/dashboard/kegiatan/{{ $kegiatan->slug}}" method="POST" class="d-inline">
+                    @method('delete')
+                    @csrf
+                    <button class="badge bg-danger border-0 " onclick="return confirm('seriusko moko hapus ki?') " ><i class="bi bi-trash"></i></button>
+                </form>
             </div>
             <!-- Tanggal dan Kategori -->
             <p class="text-muted mt-1">Tanggal: {{ $kegiatan->tanggal($kegiatan->tanggal) }} | Divisi: <a

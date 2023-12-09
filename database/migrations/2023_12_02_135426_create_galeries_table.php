@@ -15,6 +15,7 @@ class CreateGaleriesTable extends Migration
     {
         Schema::create('galeries', function (Blueprint $table) {
             $table->id();
+            $table->string('nama')->nullable();
             $table->foreignId('kegiatan_id')->nullable();
             $table->string('link');
             $table->timestamps();

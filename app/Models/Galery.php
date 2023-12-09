@@ -15,3 +15,4 @@ class Galery extends Model
         return $this->belongsTo(Kegiatan::class);
     }
 }
+

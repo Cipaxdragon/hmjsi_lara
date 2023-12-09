@@ -107,7 +107,13 @@
                   </div>
                   <div class="col-lg-4 mb-1">
                      <div class="container ">
-                        <img src="{{ $item->gambar }}" class="img-fluid w-100" alt="">
+                        <div style="width: 318px;height: 218px;" class="overflow-hidden d-flex justify-content-center align-items-center">
+                        @if ($item->isImageURL($item->gambar))
+                            <img src="{{ $item->gambar }}" class="w-100 object-fit-cover" alt="">
+                        @else
+                            <img src="{{ asset('storage/'.$item->gambar) }}" class="w-100 object-fit-cover" alt="">
+                        @endif
+                        </div>
                      </div>
                   </div>
                   <div class="col-lg-6 mb-1">
@@ -160,7 +166,10 @@
                <!-- Kegiatan 1 -->
                <div class="col-md-4">
                   <div class="card mb-4 shadow-sm">
+
                      <img src="https://source.unsplash.com/368x207?together" class="card-img-top"
+                        alt="Kegiatan 1">
+                        <img src="https://source.unsplash.com/368x207?together" class="card-img-top"
                         alt="Kegiatan 1">
                      <div class="card-body">
                         <p class="card-text"><small class="text-muted">  <a href="/kegiatan?divisi={{ $item->divisi->slug }}#head">
@@ -214,7 +223,7 @@
      </nav>
 
       @else
-      <h3 class="my-3 text-center mt-5 ">Data tidak ditemukan</h3>
+      <h3 class="my-3 text-center mt-5 ">tidak ada data</h3>
       @endif
       <h1 class="my-3 text-center text-lg-start">Artikel</h1>
       <div class="row  ">
@@ -222,6 +231,7 @@
             <div class="container d-flex justify-content-center align-items-center ">
                <div class="card shadow hover-scale overflow-hidden " style="width: 18rem;">
                   <div class="overflow-hidden" style="width: 100%;">
+
                      <img class="object-fit-cover img-fluid " src="https://source.unsplash.com/300x158?white"
                         alt="Card image cap">
                   </div>

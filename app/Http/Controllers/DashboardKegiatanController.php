@@ -45,24 +45,34 @@ class DashboardKegiatanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+   public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'nama' => ['required','max:255'],
-            'slug' => ['required','unique:kegiatans'],
-            'divisi_id' => ['required'],
-            'galery_id' => ['nullable'],
-            'galery_id' => ['nullable'],
-            'body_text' => ['required'],
-            'tanggal' => ['required']
-        ]);
+        // ddd($request);
+    // Melakukan validasi data yang diterima dari request
+    $validatedData = $request->validate([
+        'nama' => ['required','max:255'],
+        'slug' => ['required','unique:kegiatans'],
+        'gambar' => ['image','file','max:10240'],
+        'divisi_id' => ['required'],
+        'galery_id' => ['nullable'],
+        'body_text' => ['required'],
+        'tanggal' => ['required']
+    ]);
 
-        $validatedData['excerpt'] = Str::limit( strip_tags($request->body_text) , 200 );
-
-        Kegiatan::create($validatedData);
-
-        return redirect('/dashboard/kegiatan')->with('success', 'Data Kegiatan Berhasil di tambahkan bos!!!');
+    if($request->file('gambar')){
+        $validatedData['gambar'] = $request->file('gambar')->store('gambar-kegiatan');
     }
+
+    // Menggunakan fungsi Str::limit untuk membuat excerpt dari body_text dengan batasan 200 karakter
+    $validatedData['excerpt'] = Str::limit(strip_tags($request->body_text), 200);
+
+    // Membuat entitas Kegiatan baru dengan menggunakan metode create dari model Kegiatan
+    Kegiatan::create($validatedData);
+
+    // Redirect ke halaman '/dashboard/kegiatan' dengan pesan sukses
+    return redirect('/dashboard/kegiatan')->with('success', 'Data Kegiatan '.$validatedData['nama'].' Berhasil ditambahkan, bos!!!');
+}
+
 
 
     /**
@@ -86,7 +96,12 @@ class DashboardKegiatanController extends Controller
      */
     public function edit(Kegiatan $kegiatan)
     {
-        //
+        return view('admin.kegiatan.edit',[
+            'divisi' => divisi::all(),
+            'kegiatan' => $kegiatan,
+            'galery' => Galery::all()
+        ]);
+
     }
 
     /**
@@ -98,7 +113,33 @@ class DashboardKegiatanController extends Controller
      */
     public function update(Request $request, Kegiatan $kegiatan)
     {
-        //
+        // Mendefinisikan aturan validasi untuk data yang akan diupdate
+        $rules = [
+            'nama' => ['required','max:255'],
+            'divisi_id' => ['required'],
+            'galery_id' => ['nullable'],
+            'body_text' => ['required'],
+            'tanggal' => ['required']
+        ];
+
+        // Memeriksa apakah nilai slug yang dimasukkan dalam request berbeda dengan slug yang sudah ada
+        if($request->slug != $kegiatan->slug){
+            // Jika berbeda, tambahkan aturan validasi untuk memastikan slug baru bersifat unik di dalam tabel 'kegiatans'
+            $rules['slug'] = 'required|unique:kegiatans';
+        }
+
+        // Melakukan validasi data berdasarkan aturan yang sudah ditentukan
+        $validatedData = $request->validate($rules);
+
+        // Menggunakan fungsi Str::limit untuk membuat excerpt dari body_text dengan batasan 200 karakter
+        $validatedData['excerpt'] = Str::limit(strip_tags($request->body_text), 200);
+
+        // Melakukan update data Kegiatan berdasarkan ID
+        Kegiatan::where('id', $kegiatan->id)
+            ->update($validatedData);
+
+        // Redirect ke halaman '/dashboard/kegiatan' dengan pesan sukses
+        return redirect('/dashboard/kegiatan')->with('success', 'Data '.$kegiatan->nama.' berhasil diedit, bos!!!');
     }
 
     /**
@@ -109,7 +150,8 @@ class DashboardKegiatanController extends Controller
      */
     public function destroy(Kegiatan $kegiatan)
     {
-        //
+        Kegiatan::destroy($kegiatan->id);
+        return redirect('/dashboard/kegiatan')->with('success', 'Data Kegiatan Berhasil Apus!!!');
     }
 
     public function checkSlug(Request $request){
