@@ -1,8 +1,8 @@
 @extends('admin.layout.main')
 @section('container')
     <div class="container mt-2">
-        <h1 class="h2">Buat Data Kegiatan Baru </h1>
-        <form action="/dashboard/kegiatan/{{ $kegiatan->slug }}" method="POST">
+        <h1 class="h2">Edit Data Kegiatan {{$kegiatan->nama}} </h1>
+        <form action="/dashboard/kegiatan/{{ $kegiatan->slug }}" method="POST" enctype="multipart/form-data">
             @method('put')
             <div class="row">
                 <div class="col-lg-4">
@@ -44,17 +44,22 @@
                             @endforeach
                         </select>
                     </div>
-                    {{-- <div class="mb-3">
+                    <div class="mb-3">
                         <label for="gambar" class="form-label">Gambar</label>
-                        <input type="text" class="form-control @error('gambar') is-invalid @enderror " id="gambar"
-                            name="gambar" autofocus autocomplete="off" value="{{ old('name') }}" required>
+                        <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar"
+                            name="gambar"  value="{{ old('gambar') }}" onchange="previewImage()">
                         @error('gambar')
                             <div id="validationServerUsernameFeedback" class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
-                        <div class="form-text">link gambar mo biar nda na sessai server</div>
-                    </div> --}}
+                        @if ($kegiatan->gambar)
+                            <img src="{{ asset('storage/'.$kegiatan->gambar)}}" class="img-preview img-fluid mt-3 col-sm-6  rounded-3 " alt="">
+                        @else
+                            <img src="" class="img-preview img-fluid mt-3 col-sm-6  rounded-3 " alt="">
+
+                        @endif
+                    </div>
                     <div class="mb-3">
                         <label for="slug" class="form-label">Punya Galery?</label>
                         <select class="form-select" name="galery_id">
@@ -107,5 +112,25 @@
             document.addEventListener('trix-file-accept', function(e) {
                 e.preventDefault();
             })
+
+            function previewImage() {
+                const image = document.querySelector('#gambar');
+                const imgPreview = document.querySelector('.img-preview');
+
+                if (image.files.length > 0) {
+                    imgPreview.style.display = 'block';
+                    const oFReader = new FileReader();
+
+                    oFReader.readAsDataURL(image.files[0]);
+                    oFReader.onload = function(oFREvent) {
+                        imgPreview.src = oFREvent.target.result;
+                    }
+                } else {
+                    // Reset preview jika tidak ada berkas yang dipilih
+                    imgPreview.style.display = 'none';
+                    imgPreview.src = '';
+                }
+            }
         </script>
+
     @endsection

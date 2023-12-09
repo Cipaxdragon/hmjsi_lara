@@ -39,7 +39,11 @@
                             <td>
                                 @if ($item->gambar)
                                     <div class="" style="width: 50px;">
-                                        <img src="{{ $item->gambar }}" alt="" class="w-100 img-thumbnail ">
+                                        @if($item->isImageURL($item->gambar))
+                                            <img src="{{ $item->gambar }}" alt="" class="w-100 img-thumbnail ">
+                                        @else
+                                            <img src="{{ asset('storage/'.$item->gambar)  }}" alt="" class="w-100 img-thumbnail ">
+                                        @endif
                                     </div>
                                 @else
                                     tidak ada gambar

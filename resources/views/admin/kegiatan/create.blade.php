@@ -38,28 +38,30 @@
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label for="gambar" class="form-label">image</label>
-                        <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar" name="gambar" required value="{{ old('gambar') }}">
+                        <label for="gambar" class="form-label">Gambar</label>
+                        <input class="form-control @error('gambar') is-invalid @enderror" type="file" id="gambar"
+                            name="gambar" required value="{{ old('gambar') }}" onchange="previewImage()">
                         @error('gambar')
-                        <div id="validationServerUsernameFeedback" class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                      </div>
+                            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        <img src="" class="img-preview img-fluid mt-3 col-sm-6  rounded-3 " alt="">
+                    </div>
                     <div class="mb-3">
                         <label for="slug" class="form-label">Punya Galery?</label>
-                        <select class="form-select" name="galery_id"  >
+                        <select class="form-select" name="galery_id">
                             <option value="">tidak ada </option>
                             @foreach ($galery as $item)
-                            {{-- Memeriksa apakah properti 'nama' pada $item sama dengan null --}}
-                            @if ($item->nama === null)
-                                {{-- Memeriksa apakah properti 'nama' pada $item->kegiatan tidak sama dengan null --}}
-                                @if ($item->kegiatan->nama !== null)
-                                    {{-- Menampilkan opsi (option) dengan nilai dan teks yang sesuai --}}
-                                    <option value="{{ $item->id }}"> Galery {{ $item->kegiatan->nama}}</option>
+                                {{-- Memeriksa apakah properti 'nama' pada $item sama dengan null --}}
+                                @if ($item->nama === null)
+                                    {{-- Memeriksa apakah properti 'nama' pada $item->kegiatan tidak sama dengan null --}}
+                                    @if ($item->kegiatan->nama !== null)
+                                        {{-- Menampilkan opsi (option) dengan nilai dan teks yang sesuai --}}
+                                        <option value="{{ $item->id }}"> Galery {{ $item->kegiatan->nama }}</option>
+                                    @endif
                                 @endif
-                            @endif
-                        @endforeach
+                            @endforeach
 
                         </select>
                     </div>
@@ -103,5 +105,24 @@
             document.addEventListener('trix-file-accept', function(e) {
                 e.preventDefault();
             })
+
+            function previewImage() {
+                const image = document.querySelector('#gambar');
+                const imgPreview = document.querySelector('.img-preview');
+
+                if (image.files.length > 0) {
+                    imgPreview.style.display = 'block';
+                    const oFReader = new FileReader();
+
+                    oFReader.readAsDataURL(image.files[0]);
+                    oFReader.onload = function(oFREvent) {
+                        imgPreview.src = oFREvent.target.result;
+                    }
+                } else {
+                    // Reset preview jika tidak ada berkas yang dipilih
+                    imgPreview.style.display = 'none';
+                    imgPreview.src = '';
+                }
+            }
         </script>
     @endsection
