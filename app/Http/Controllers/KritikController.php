@@ -9,7 +9,6 @@ class KritikController extends Controller
 {
     public function submit(Request $request)
     {
-        dd($request->_token);
         $validatedData = $request->validate([
             'nama' => ['required'],
             'teks' => ['required'],
@@ -17,10 +16,5 @@ class KritikController extends Controller
         ]);
         kritik::create($validatedData);
         return redirect('/beranda#kritik')->with('success','Kritik Anda Berhasil Terkirim ');
-
-
-
-
-
     }
 }

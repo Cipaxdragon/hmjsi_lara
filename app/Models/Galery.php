@@ -14,5 +14,15 @@ class Galery extends Model
     public function kegiatan(){
         return $this->belongsTo(Kegiatan::class);
     }
+
+    public function isImageURL($url) {
+        $urlLower = strtolower($url); // Ubah ke huruf kecil untuk memastikan case-insensitive
+        if (strpos($urlLower, 'https://') === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }
 

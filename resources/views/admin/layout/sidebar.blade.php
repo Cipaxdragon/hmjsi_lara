@@ -22,7 +22,7 @@
                         Kegiatan
                     </a>
                 </li>
-<li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/postingan*') ?'active' : '' }}" href="#">
                     <i class="bi  {{ Request::is('dashboard/postingan*') ?'bi-database-fill' : 'bi-database' }}"></i>
                         Artikel/Postingan
@@ -42,6 +42,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/kritik*') ?'active' : '' }}" href="/dashboard/kritik">
+                    <i class="bi   {{ Request::is('dashboard/kritik*') ?' bi-chat-left-dots-fill' : 'bi bi-chat-left' }}"></i>
+                        kritik
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/pengurus*') ?'active' : '' }}" href="#">
                     <i class="bi   {{ Request::is('dashboard/pengurus*') ?'bi-people-fill' : 'bi-people' }}"></i>
                         pengurus
@@ -54,7 +60,7 @@
                     </a>
                 </li>
                 <li class="nav-item disabled">
-                    <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/galery*') ?'active' : '' }}" href="#">
+                    <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/galery*') ?'active' : '' }}" href="/dashboard/galeri">
                         <i class="bi bi-card-image "></i>
                         Galery
                     </a>

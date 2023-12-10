@@ -92,5 +92,5 @@ class Kegiatan extends Model
             return false;
         }
     }
-
+    
 }

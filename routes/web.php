@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardGaleriController;
 use App\Http\Controllers\DashboardKegiatanController;
+use App\Http\Controllers\DashboardKritikController;
+use App\Http\Controllers\DashboardPengumumanController;
 use App\Http\Controllers\KritikController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PengurusController;
@@ -33,10 +36,12 @@ Route::get(
 )->middleware('auth');
 
 Route::get('dashboard/kegiatan/checkSlug', [DashboardKegiatanController::class, 'checkSlug']);
+
 Route::resource('/dashboard/kegiatan', DashboardKegiatanController::class)->middleware(['auth']);
+Route::resource('/dashboard/kritik', DashboardKritikController::class)->middleware(['auth']);
+Route::resource('/dashboard/galeri', DashboardGaleriController::class)->middleware(['auth']);
+Route::resource('/dashboard/pengumuman', DashboardPengumumanController::class)->middleware(['auth']);
 // Route::resource('/dashboard/kegiatan', DashboardKegiatanController::class,'index');
-
-
 
 //about
 // Route::get('/tentang', [PostController::class,'beranda']);
