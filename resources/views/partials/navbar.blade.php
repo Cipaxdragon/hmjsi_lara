@@ -14,7 +14,7 @@
                     <a class="nav-link active" style="color: inherit" href="/">Beranda</a>
                 </li>
                 <li class="nav-item nav-item-animasi">
-                    <a class="nav-link" style="color: inherit" href="/kegiatan">Informasi</a>
+                    <a class="nav-link" style="color: inherit" href="/kegiatan">Kegiatan</a>
                 </li>
                 <li class="nav-item nav-item-animasi">
                     <a class="nav-link" style="color: inherit" href="/pengurus">Pengurus</a>
@@ -23,7 +23,7 @@
                     <a class="nav-link" style="color: inherit" href="/tentang">Tentang</a>
                 </li>
 
-                <li class="nav-item dropdown nav-item-animasi">
+                {{-- <li class="nav-item dropdown nav-item-animasi">
                     <a class="nav-link" href="#" role="button" style="color: inherit" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Lainnya
@@ -46,7 +46,7 @@
                         <li><a class="dropdown-item" style="color: inherit" href="#">Galery</a></li>
                         <li><a class="dropdown-item" style="color: inherit" href="#">Kritik dan Saran</a></li>
                     </ul>
-                </li>
+                </li> --}}
 
                 @auth
                     <!-- Selamat Datang dan Dropdown Logout -->

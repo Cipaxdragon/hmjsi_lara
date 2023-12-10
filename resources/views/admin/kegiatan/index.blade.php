@@ -45,7 +45,7 @@
         <div class="alert alert-success" role="alert">
             {{ session('success') }}
         </div>
-    @endif
+        @endif
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">

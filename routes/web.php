@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardGaleriController;
 use App\Http\Controllers\DashboardKegiatanController;
 use App\Http\Controllers\DashboardKritikController;
+use App\Http\Controllers\DashboardPengumuman;
 use App\Http\Controllers\DashboardPengumumanController;
 use App\Http\Controllers\KritikController;
 use App\Http\Controllers\LoginController;
@@ -25,8 +26,8 @@ Route::post('/beranda/kritik', [KritikController::class, 'submit']);
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'autenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
-Route::get('/register', [RegisterController::class, 'index']);
-Route::post('/register', [RegisterController::class, 'store']);
+// Route::get('/register', [RegisterController::class, 'index']);
+// Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get(
     '/dashboard',
@@ -39,8 +40,9 @@ Route::get('dashboard/kegiatan/checkSlug', [DashboardKegiatanController::class, 
 
 Route::resource('/dashboard/kegiatan', DashboardKegiatanController::class)->middleware(['auth']);
 Route::resource('/dashboard/kritik', DashboardKritikController::class)->middleware(['auth']);
+Route::delete('/dashboard/galeri/{galery}', [DashboardGaleriController::class, 'destroy'])->middleware(['auth']);
 Route::resource('/dashboard/galeri', DashboardGaleriController::class)->middleware(['auth']);
-Route::resource('/dashboard/pengumuman', DashboardPengumumanController::class)->middleware(['auth']);
+Route::resource('/dashboard/pengumuman', DashboardPengumuman::class)->middleware(['auth']);
 // Route::resource('/dashboard/kegiatan', DashboardKegiatanController::class,'index');
 
 //about

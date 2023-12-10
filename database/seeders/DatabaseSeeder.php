@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\divisi;
 use App\Models\Galery;
 use App\Models\Kegiatan;
+use App\Models\Pengumuman;
 use App\Models\Pengurus;
 
 class DatabaseSeeder extends Seeder
@@ -22,10 +23,10 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(5)->create();
         User::create([
-            'name' => 'Ghazali',
+            'name' => 'Kominfo',
             'email' => '60900121064@uin-alauddin.ac.id',
-            'username' => 'ghazali',
-            'password' => '$2y$10$voAm/wCaKTE7GbxZKxczIumSygl81JrQMFCw0Pzgwt/flAoVFypVG',
+            'username' => 'kominfo',
+            'password' => bcrypt('kominfohmjsi2023'),
         ]);
 
         Pengurus::create([
@@ -314,9 +315,10 @@ class DatabaseSeeder extends Seeder
 
 
 
-        Post::factory(20)->create();
-        Kegiatan::factory(100)->create();
-        Galery::factory(20)->create();
+        // Post::factory(20)->create();
+        // Kegiatan::factory(5)->create();
+        // Galery::factory(20)->create();
+        // Pengumuman::factory(1)->create();
         // Pengurus::factory(20)->create();
 
         // Post::create([

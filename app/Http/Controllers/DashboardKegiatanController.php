@@ -133,7 +133,7 @@ class DashboardKegiatanController extends Controller
          // Jika ada file gambar yang diunggah, tambahkan aturan validasi untuk gambar
          if ($request->file('gambar')) {
             Storage::delete($kegiatan->gambar);
-             $rules['gambar'] = 'image|mimes:jpeg,png,jpg,gif,svg|max:10240';
+            $rules['gambar'] = 'image|mimes:jpeg,png,jpg,gif,svg|max:10240';
          }
 
          // Melakukan validasi data berdasarkan aturan yang sudah ditentukan

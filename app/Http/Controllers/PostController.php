@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Str;
 use App\Models\divisi;
 use App\Models\Kegiatan;
+use App\Models\Pengumuman;
 use App\Models\Post;
 use App\Models\Postingan;
 use Illuminate\Http\Request;
@@ -17,6 +18,7 @@ class PostController extends Controller
         $kegiatan = Kegiatan::with('divisi')->orderByDesc('tanggal');
 
         return view('user/kegiatan', [
+            "title" => "Informasi",
             "title" => "Informasi",
             "post" => $posts,
             "berhasil" => "berhasil",
@@ -46,6 +48,7 @@ class PostController extends Controller
         return view('user/beranda',[
             "title" => 'HMJ-SI',
             "post" => $post,
+            "pengumuman" => Pengumuman::latest()->first(),
         ]);
     }
 

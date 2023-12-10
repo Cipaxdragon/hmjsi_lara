@@ -225,7 +225,7 @@
       @else
       <h3 class="my-3 text-center mt-5 ">tidak ada data</h3>
       @endif
-      <h1 class="my-3 text-center text-lg-start">Artikel</h1>
+      {{-- <h1 class="my-3 text-center text-lg-start">Artikel</h1>
       <div class="row  ">
          <div class="col-lg-3 col mb-4 animated-element">
             <div class="container d-flex justify-content-center align-items-center ">
@@ -308,7 +308,7 @@
                </div>
             </div>
          </div>
-      </div>
+      </div> --}}
    </div>
    </div>
 </section>

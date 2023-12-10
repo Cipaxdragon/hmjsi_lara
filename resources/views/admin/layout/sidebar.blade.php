@@ -25,20 +25,20 @@
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/postingan*') ?'active' : '' }}" href="#">
                     <i class="bi  {{ Request::is('dashboard/postingan*') ?'bi-database-fill' : 'bi-database' }}"></i>
-                        Artikel/Postingan
+                        Artikel/Postingan<i class="bi bi-lock"></i>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/pengurus*') ?'active' : '' }}" href="#">
-                    <i class="bi   {{ Request::is('dashboard/info-penting*') ?'bi-info-square-fill' : 'bi-info-square' }}"></i>
-                        info-penting
+                    <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/pengumuman*') ?'active' : '' }}" href="/dashboard/pengumuman">
+                    <i class="bi   {{ Request::is('dashboard/pengumuman*') ?'bi-info-square-fill' : 'bi-info-square' }}"></i>
+                        Pengumuman
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/halaman*') ?'active' : '' }}" href="#">
                     <i class="bi  bi-page  {{ Request::is('dashboard/halaman*') ?'bi-file-fill' : 'bi-file' }}"></i>
-                        Halaman
+                        Halaman<i class="bi bi-lock"></i>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -50,13 +50,13 @@
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/pengurus*') ?'active' : '' }}" href="#">
                     <i class="bi   {{ Request::is('dashboard/pengurus*') ?'bi-people-fill' : 'bi-people' }}"></i>
-                        pengurus
+                        pengurus<i class="bi bi-lock"></i>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link d-flex align-items-center gap-2  {{ Request::is('dashboard/prestasi*') ?'active' : '' }}" href="#">
                     <i class="bi   {{ Request::is('dashboard/prestasi*') ?'bi-trophy-fill' : 'bi-trophy' }}"></i>
-                        Prestasi
+                        Prestasi<i class="bi bi-lock"></i>
                     </a>
                 </li>
                 <li class="nav-item disabled">

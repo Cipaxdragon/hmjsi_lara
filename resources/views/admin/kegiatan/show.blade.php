@@ -3,9 +3,6 @@
 @section('container')
 
 <style>
-
-
-
 </style>
 <div class="container px-5 mt-5 ">
     <div class="row">
@@ -25,7 +22,7 @@
                 <a href="/dashboard/kegiatan/{{ $kegiatan->slug }}" class="badge bg-primary"><i
                     class="bi bi-eye"></i></a>
                 <a href="/dashboard/kegiatan/{{ $kegiatan->slug }}/edit" class="badge bg-warning"><i class="bi bi-pencil"></i></a>
-                <form action="/dashboard/kegiatan/{{ $kegiatan->slug}}" method="kegiatan" class="d-inline">
+                <form action="/dashboard/kegiatan/{{ $kegiatan->slug}}" method="POST" class="d-inline">
                     @method('delete')
                     @csrf
                     <button class="badge bg-danger border-0 " onclick="return confirm('seriusko moko hapus ki?') " ><i class="bi bi-trash"></i></button>
@@ -38,7 +35,7 @@
 
             <!-- Body Text -->
             <p> {!! $kegiatan->body_text !!}</p>
-            
+
 
         </div>
 

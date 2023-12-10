@@ -33,7 +33,6 @@
                         <label for="slug" class="form-label">Divisi</label>
                         <select class="form-select" name="divisi_id">
                             {{-- <option selected>Open this select menu</option> --}}
-
                             @foreach ($divisi as $item)
                                 @if ($kegiatan->divisi_id === $item->id)
                                     <option value="{{ $item->id }}" selected="{{ $kegiatan->divisi_id }}">
@@ -57,7 +56,6 @@
                             <img src="{{ asset('storage/'.$kegiatan->gambar)}}" class="img-preview img-fluid mt-3 col-sm-6  rounded-3 " alt="">
                         @else
                             <img src="" class="img-preview img-fluid mt-3 col-sm-6  rounded-3 " alt="">
-
                         @endif
                     </div>
                     <div class="mb-3">
@@ -65,7 +63,7 @@
                         <select class="form-select" name="galery_id">
                             <option value="">tidak ada </option>
                             @foreach ($galery as $item)
-                                @if ($item->kegiatan->nama !== null)
+                                @if ($item->kegiatan->nama??null)
                                     <option value="{{ $item->id }}"> Galery {{ $item->kegiatan->nama }}</option>
                                 @endif
                             @endforeach

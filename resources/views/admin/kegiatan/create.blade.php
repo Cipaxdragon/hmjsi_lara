@@ -53,11 +53,8 @@
                         <select class="form-select" name="galery_id">
                             <option value="">tidak ada </option>
                             @foreach ($galery as $item)
-                                {{-- Memeriksa apakah properti 'nama' pada $item sama dengan null --}}
                                 @if ($item->nama === null)
-                                    {{-- Memeriksa apakah properti 'nama' pada $item->kegiatan tidak sama dengan null --}}
-                                    @if ($item->kegiatan->nama !== null)
-                                        {{-- Menampilkan opsi (option) dengan nilai dan teks yang sesuai --}}
+                                    @if ($item->kegiatan->nama??null !== null )
                                         <option value="{{ $item->id }}"> Galery {{ $item->kegiatan->nama }}</option>
                                     @endif
                                 @endif

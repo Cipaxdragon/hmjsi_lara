@@ -6,7 +6,7 @@ use App\Models\Galery;
 use App\Models\Kegiatan;
 use Illuminate\Http\Request;
 
-class DashboardGaleriController extends Controller
+class DasborGaleriKontroler extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,6 +31,7 @@ class DashboardGaleriController extends Controller
             'kegiatan' => kegiatan::all(),
         ]);
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -83,7 +84,7 @@ class DashboardGaleriController extends Controller
      */
     public function edit(Galery $galery)
     {
-        dd($galery);
+        //
     }
 
     /**
@@ -106,8 +107,8 @@ class DashboardGaleriController extends Controller
      */
     public function destroy(Galery $galery)
     {
+        dd($galery->id);
         Galery::destroy($galery->id);
         return redirect('/dashboard/galeri')->with('success', 'Data Galeri Berhasil Apus!!!');
     }
-
 }
