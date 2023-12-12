@@ -40,9 +40,40 @@
         </div>
     </section>
     <section>
-        <div class="container-fluid animated-element">
+        {{-- <div class="container-fluid animated-element">
             {!! $pengumuman->code ?? null !!}
+        </div> --}}
+        <div class="container-fluid animated-element">
+            <div class="text-center bg-body-tertiary rounded-3">
+                <div class="container">
+                    <div class="row">
+                        <div
+                            class="col-lg-6 d-flex flex-column align-items-center justify-content-center order-lg-5  my-5 rounded ">
+                            <div class="container overflow-hidden " style="height: 400px;">
+                                <img src="https://source.unsplash.com/1920x1080?white"
+                                    class="img-fluid h-100 object-fit-cover rounded-5" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex flex-column align-items-center justify-content-center my-5">
+                            <h1 class="text-body-emphasis fw-bold">VSGA X HMJ</h1>
+                            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                                This is a custom jumbotron featuring an SVG image at the top, some longer text that
+                                wraps
+                                early thanks to a responsive class, and a customized call to action.
+                            </p>
+                            <div class="d-inline-flex gap-2 ">
+                                <button
+                                    class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill fs-6"
+                                    type="button">
+                                    Segara Daftarkan dirimu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
     </section>
     <!-- ;lates blog -->
     <section>
