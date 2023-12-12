@@ -12,6 +12,7 @@ use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Models\Category;
+use App\Models\Galery;
 use App\Models\Kegiatan;
 use App\Models\Post;
 use Clockwork\Request\Request;
@@ -50,7 +51,8 @@ Route::resource('/dashboard/pengumuman', DashboardPengumuman::class)->middleware
 //jika tidak ada sama semakali
 Route::get('/tentang', function () {
     return view('user.tentang', [
-        "title" => "tentang"
+        "title" => "tentang",
+        "galeri" => Galery::latest()->take(6)->get(),
     ]);
 });
 

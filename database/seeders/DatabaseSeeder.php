@@ -315,11 +315,11 @@ class DatabaseSeeder extends Seeder
 
 
 
-        // Post::factory(20)->create();
-        // Kegiatan::factory(5)->create();
-        // Galery::factory(20)->create();
-        // Pengumuman::factory(1)->create();
-        // Pengurus::factory(20)->create();
+        Post::factory(20)->create();
+        Kegiatan::factory(5)->create();
+        Galery::factory(20)->create();
+        Pengumuman::factory(1)->create();
+        Pengurus::factory(20)->create();
 
         // Post::create([
         //     'title' => 'HMJ ta beku',

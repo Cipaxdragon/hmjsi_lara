@@ -167,33 +167,24 @@
 <section>
     <div class="container mt-5">
         <h3 class=" fw-bold mx-auto text-center mx-lg-0 mb-5">Galery</h3>
-
         <div class="gallery-container">
-            <div class="gallery-item col-md-4">
-                <img src="https://source.unsplash.com/500x500?white" alt="Image 1">
+            @foreach ($galeri as $item)
+            <div class="gallery-item col-md-4 rounded d-flex justify-content-center align-items-center p-5 p-lg-0 p-lg-0 mb-0 mb-lg-5 ">
+                <div class="overflow-hidden rounded" style="width: 25rem; height: 25rem;">
+                    @if ($item->isImageURL($item->link))
+                        <img src="{{ $item->link }}" class="object-fit-cover h-100 rounded" alt="Image 1">
+                    @else
+                        <img src="{{ asset('storage/'. $item->link) }}" class="object-fit-cover h-100 rounded" alt="Image 1">
+                    @endif
+                    </div>
+                </div>
+                @endforeach
             </div>
-            <div class="gallery-item col-md-4">
-                <img src="https://source.unsplash.com/500x500?white" alt="Image 2">
-            </div>
-            <div class="gallery-item col-md-4">
-                <img src="https://source.unsplash.com/500x500?white" alt="Image 3">
-            </div>
-            <div class="gallery-item col-md-4">
-                <img src="https://source.unsplash.com/500x500?white" alt="Image 3">
-            </div>
-            <div class="gallery-item col-md-4">
-                <img src="https://source.unsplash.com/500x500?white" alt="Image 3">
-            </div>
-            <div class="gallery-item col-md-4">
-                <img src="https://source.unsplash.com/500x500?white" alt="Image 3">
-            </div>
-            <!-- Tambahkan item galeri sesuai kebutuhan -->
-        </div>
-        <div class="row mt-5">
+        {{-- <div class="row mt-5">
             <div class="container d-flex justify-content-center align-items-center">
                 <button type="" class="mx-auto btn btn-outline-primary"> Lihat lebih lengkap</button>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
 <section class="bg-body-tertiary">

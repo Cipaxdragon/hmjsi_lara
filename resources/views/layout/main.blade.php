@@ -2,10 +2,10 @@
 <html lang="ID">
 
 <head>
-    <link rel="stylesheet" href="/icon/bootstrap-icons.css">
-    <link rel="stylesheet" href="..\css\mobile.css">
-    <link rel="stylesheet" href="..\css\style.css">
-    <link rel="stylesheet" href="..\css\bootstrap.css">
+    <link rel="stylesheet" href="{{ asset('icon/bootstrap-icons.css')}}">
+    <link rel="stylesheet" href="{{ asset('css\mobile.css')}}">
+    <link rel="stylesheet" href="{{ asset('css\style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css\bootstrap.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -19,7 +19,7 @@
     <link rel="shortcut icon"
         href="https://cdn.discordapp.com/attachments/1152085105641279519/1178314168961597520/LOGO_SI.png?ex=6575b195&amp;is=65633c95&amp;hm=caef25a36e2040c0cee7fb70399dd710c55234541efbc5de523029d0136af56f&amp;"
         type="image/x-icon">
-    
+
 </head>
 
 <body>
@@ -38,9 +38,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/main.js"></script>
-    <script src="..\boostrap\js\bootstrap.bundle.js"></script>
+    <script src="{{asset('js/bootstrap.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{asset('boostrap\js\bootstrap.bundle.js')}}"></script>
 
     <script>
 document.addEventListener("DOMContentLoaded", function () {

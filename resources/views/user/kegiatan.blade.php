@@ -24,7 +24,7 @@
    color: blue;
    }
    .jumbotron {
-   background-image: url('https://source.unsplash.com/368x207?together');
+   background-image: url('https://cdn.discordapp.com/attachments/1152085105641279519/1184042275064528917/ornament.png?ex=658a884c&is=6578134c&hm=1871738f3b6459f4608acd6e5cf5b0f27e906533cec126f26e2ddab21a173810&');
    /* Ganti 'url_gambar_anda.jpg' dengan path gambar Anda */
    background-size: cover;
    background-position: center;

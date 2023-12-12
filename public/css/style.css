@@ -38,11 +38,12 @@ section{
     margin-bottom: 100px;
     min-height: 600px;
 }
+
 #header-hero-1 {
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 793px;
-    background-image: url('https://source.unsplash.com/1600x764?white');
+    background-image: url('https://cdn.discordapp.com/attachments/1152106448478802032/1183641050850533428/bg_hero_1111.png?ex=658912a1&is=65769da1&hm=eba2853d0165d05389be89694d3074e062164793d78896e29640f1faa5b98464=&');
 }
 
 .kon{
@@ -69,7 +70,6 @@ section{
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     /* Sesuaikan gaya lainnya sesuai kebutuhan */
   }
-
 
 /* Tambahkan gaya untuk efek fade */
 .carousel-item {

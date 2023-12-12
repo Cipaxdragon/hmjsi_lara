@@ -7,6 +7,7 @@ use App\Models\Kegiatan;
 use App\Models\Pengumuman;
 use App\Models\Post;
 use App\Models\Postingan;
+use App\Models\Galery;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -30,8 +31,6 @@ class PostController extends Controller
     {
         $divisi->nama;
         $posts = Post::with('divisi')->latest()->get();
-
-
         return view('user/kegiatan', [
             "title" =>  $divisi->slug,
             "post" => $posts,
@@ -40,14 +39,13 @@ class PostController extends Controller
         ]);
     }
 
-
-
     public function beranda(){
         //mengambil dari model kemudian mengurutkan yang terbaru lalu mengamil 3 biji
         $post = Kegiatan::with('divisi')->orderBy('created_at', 'desc')->take(4)->get();
         return view('user/beranda',[
             "title" => 'HMJ-SI',
             "post" => $post,
+            "galeri" => Galery::latest()->take(6)->get(),
             "pengumuman" => Pengumuman::latest()->first(),
         ]);
     }
