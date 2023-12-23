@@ -8,7 +8,6 @@
                     about what’s most interesting in this post’s contents.</p>
             </div>
         </div>
-        
         <div class="nav-scroller py-1 mb-3 border-bottom">
             <nav class="nav nav-underline justify-content-between">
                 @foreach ($kategori as $item)
@@ -18,7 +17,6 @@
             </nav>
         </div>
         <div class="row mb-2">`
-
             @foreach ($post as $post)
                 <div class="col-md-6">
                     <div
@@ -43,6 +41,5 @@
                 </div>
             @endforeach
         </div>
-
     </main>
 @endsection

@@ -82,7 +82,7 @@
                         <div class="row p-lg-0 ">
                             <div class="col-lg-2"></div>
                             @foreach ($item->pengurus->whereBetween('jabatan', [1, 2]) as $ketua)
-                                <div class="col-lg-4   p-lg-3 p-3 mb-1">
+                                <div class="col-lg-4 p-lg-3 p-3 mb-1">
                                     <div class="card overflow-hidden shadow position-relative border-bottom border-5 ">
                                         <div class="card-img d-flex justify-content-center align-items-center  hover-scale">
                                             <img src="{{ $ketua->gambar }}" class="img-fluid h-100" alt="">

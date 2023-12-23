@@ -17,7 +17,7 @@
                                 {{ $message }}
                             </div>
                         @enderror
-                        <div class="form-text">Cie Mau mi Mubes Baru Ma input</div>
+                        <div class="form-text">title</div>
                     </div>
                     <div class="mb-3">
                         <label for="slug" class="form-label">Slug</label>
